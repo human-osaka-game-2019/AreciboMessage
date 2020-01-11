@@ -5,946 +5,946 @@ BitMap::Color BitMap::ChangeColor(int j,int i)
 #define Return(width,height,color) {if(width == j && height == i){return color;}}
 
 	//一行目
-	for (int col = scall * 0; col < scall * 1; col++)
+	for (int col = scale * 0; col < scale * 1; col++)
 	{
-		for (int row = 0;row < scall;row++)
+		for (int row = 0;row < scale;row++)
 		{
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//
-			Return(col, 50 * scall + row, Green);
+			Return(col, 50 * scale + row, Green);
 			//
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//
-			Return(col, 60 * scall + row, Green);
+			Return(col, 60 * scale + row, Green);
 			//
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 			//
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//
-			Return(col, 70 * scall + row, White);
+			Return(col, 70 * scale + row, White);
 		}
 
 	}
 	//二行目
-	for (int col = scall * 1; col < scall * 2; col++)
+	for (int col = scale * 1; col < scale * 2; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//
-			Return(col, 5 * scall + row, Purple);
+			Return(col, 5 * scale + row, Purple);
 			//
-			Return(col, 6 * scall + row, Purple);
+			Return(col, 6 * scale + row, Purple);
 			//
-			Return(col, 7 * scall + row, Purple);
+			Return(col, 7 * scale + row, Purple);
 			//
-			Return(col, 31 * scall + row, Blue);
+			Return(col, 31 * scale + row, Blue);
 			//
-			Return(col, 32 * scall + row, Blue);
+			Return(col, 32 * scale + row, Blue);
 			//
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 		}	
 	}
 	//三行目
-	for (int col = scall * 2; col < scall * 3; col++)
+	for (int col = scale * 2; col < scale * 3; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//
-			Return(col, 7 * scall + row, Purple);
+			Return(col, 7 * scale + row, Purple);
 			//
-			Return(col, 8 * scall + row, Purple);
+			Return(col, 8 * scale + row, Purple);
 			//
-			Return(col, 14 * scall + row, Yellow);
+			Return(col, 14 * scale + row, Yellow);
 			//
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//
-			Return(col, 16 * scall + row, Yellow);
+			Return(col, 16 * scale + row, Yellow);
 			//
-			Return(col, 18 * scall + row, Blue);
+			Return(col, 18 * scale + row, Blue);
 			//
-			Return(col, 19 * scall + row, Blue);
+			Return(col, 19 * scale + row, Blue);
 			//
-			Return(col, 20 * scall + row, Blue);
+			Return(col, 20 * scale + row, Blue);
 			//
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//
-			Return(col, 24 * scall + row, Blue);
+			Return(col, 24 * scale + row, Blue);
 			//
-			Return(col, 25 * scall + row, Blue);
+			Return(col, 25 * scale + row, Blue);
 			//
-			Return(col, 26 * scall + row, Blue);
+			Return(col, 26 * scale + row, Blue);
 			//
-			Return(col, 27 * scall + row, Blue);
+			Return(col, 27 * scale + row, Blue);
 			//
-			Return(col, 30 * scall + row, Blue);
+			Return(col, 30 * scale + row, Blue);
 			//
-			Return(col, 33 * scall + row, Blue);
+			Return(col, 33 * scale + row, Blue);
 			//
-			Return(col, 40 * scall + row, Blue);
+			Return(col, 40 * scale + row, Blue);
 			//
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//
-			Return(col, 71 * scall + row, White);
+			Return(col, 71 * scale + row, White);
 		}
 	}
 	//四行目
-	for (int col = scall * 3; col < scall * 4; col++)
+	for (int col = scale * 3; col < scale * 4; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//
-			Return(col, 8 * scall + row, Purple);
+			Return(col, 8 * scale + row, Purple);
 			//
-			Return(col, 9 * scall + row, Purple);
+			Return(col, 9 * scale + row, Purple);
 			//
-			Return(col, 14  * scall + row, Yellow);
+			Return(col, 14  * scale + row, Yellow);
 			//
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//				 
-			Return(col, 16 * scall + row, Yellow);
+			Return(col, 16 * scale + row, Yellow);
 			//				 
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//				 
-			Return(col, 29 * scall + row, Blue);
+			Return(col, 29 * scale + row, Blue);
 			//				 
-			Return(col, 34 * scall + row, Blue);
+			Return(col, 34 * scale + row, Blue);
 			//				 
-			Return(col, 40 * scall + row, Blue);
+			Return(col, 40 * scale + row, Blue);
 			//				 
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//				 
-			Return(col, 46 * scall + row, Green);
+			Return(col, 46 * scale + row, Green);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//				 
-			Return(col, 56 * scall + row, Green);
+			Return(col, 56 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 
 		}
 	}
 	//五行目
-	for (int col = 4 * scall; col < scall * 5; col++)
+	for (int col = 4 * scale; col < scale * 5; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//
-			Return(col, 9* scall + row, Purple);
+			Return(col, 9* scale + row, Purple);
 			//
-			Return(col, 10* scall + row, Purple);
+			Return(col, 10* scale + row, Purple);
 			//
-			Return(col, 14* scall + row, Yellow);
+			Return(col, 14* scale + row, Yellow);
 			//
-			Return(col, 15* scall + row, Yellow);
+			Return(col, 15* scale + row, Yellow);
 			//
-			Return(col, 16* scall + row, Yellow);
+			Return(col, 16* scale + row, Yellow);
 			//
-			Return(col, 22* scall + row, White);
+			Return(col, 22* scale + row, White);
 			//
-			Return(col, 28* scall + row, Blue);
+			Return(col, 28* scale + row, Blue);
 			//
-			Return(col, 35* scall + row, Blue);
+			Return(col, 35* scale + row, Blue);
 			//
-			Return(col, 39* scall + row, Blue);
+			Return(col, 39* scale + row, Blue);
 			//
-			Return(col, 43* scall + row, Green);
+			Return(col, 43* scale + row, Green);
 			//
-			Return(col, 44* scall + row, Green);
+			Return(col, 44* scale + row, Green);
 			//
-			Return(col, 48* scall + row, Green);
+			Return(col, 48* scale + row, Green);
 			//
-			Return(col, 53* scall + row, Green);
+			Return(col, 53* scale + row, Green);
 			//
-			Return(col, 54* scall + row, Green);
+			Return(col, 54* scale + row, Green);
 			//
-			Return(col, 58* scall + row, Green);
+			Return(col, 58* scale + row, Green);
 			//
-			Return(col, 69* scall + row, White);
+			Return(col, 69* scale + row, White);
 			//
-			Return(col, 70* scall + row, White);
+			Return(col, 70* scale + row, White);
 			//
-			Return(col, 71* scall + row, White);
+			Return(col, 71* scale + row, White);
 		}
 	}
 	//六行目
-	for (int col = scall * 5; col < scall * 6; col++)
+	for (int col = scale * 5; col < scale * 6; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 2 *scall+ row, Purple);
+			Return(col, 2 *scale+ row, Purple);
 			//			  
-			Return(col, 3 *scall+ row, Purple);
+			Return(col, 3 *scale+ row, Purple);
 			//			  
-			Return(col, 4 *scall+ row, Purple);
+			Return(col, 4 *scale+ row, Purple);
 			//			  
-			Return(col, 5 *scall+ row, Purple);
+			Return(col, 5 *scale+ row, Purple);
 			//			  
-			Return(col, 6 *scall+ row, Purple);
+			Return(col, 6 *scale+ row, Purple);
 			//			   
-			Return(col, 7 *scall+ row, Purple);
+			Return(col, 7 *scale+ row, Purple);
 			//			   
-			Return(col, 8 *scall+ row, Purple);
+			Return(col, 8 *scale+ row, Purple);
 			//			   
-			Return(col, 10 *scall + row, Purple);
+			Return(col, 10 *scale + row, Purple);
 			//			   
-			Return(col, 28 *scall + row, Blue);
+			Return(col, 28 *scale + row, Blue);
 			//			   
-			Return(col, 35 *scall + row, Blue);
+			Return(col, 35 *scale + row, Blue);
 			//			   
-			Return(col, 39 *scall + row, Blue);
+			Return(col, 39 *scale + row, Blue);
 		}
 	}
 	//七行目
-	for (int col = scall * 6; col < scall * 7; col++)
+	for (int col = scale * 6; col < scale * 7; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 7 * scall + row, Purple);
+			Return(col, 7 * scale + row, Purple);
 			//
-			Return(col, 10 * scall + row, Purple);
+			Return(col, 10 * scale + row, Purple);
 			//			     
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//			     
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//			     
-			Return(col, 23 * scall + row, Red);
+			Return(col, 23 * scale + row, Red);
 			//			     
-			Return(col, 27 * scall + row, Blue);
+			Return(col, 27 * scale + row, Blue);
 			//			     
-			Return(col, 36 * scall + row, Blue);
+			Return(col, 36 * scale + row, Blue);
 			//			     
-			Return(col, 38 * scall + row, Blue);
+			Return(col, 38 * scale + row, Blue);
 			//			     
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//			     
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//			     
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//			     
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 			//			     
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//			     
-			Return(col, 72 * scall + row, White);
+			Return(col, 72 * scale + row, White);
 		}
 	}
 	//八行目
-	for (int col = scall * 7; col < scall * 8; col++)
+	for (int col = scale * 7; col < scale * 8; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0* scall + row, White);
+			Return(col, 0* scale + row, White);
 			//
-			Return(col, 1* scall + row, White);
+			Return(col, 1* scale + row, White);
 			//
-			Return(col, 6 * scall + row, Purple);
+			Return(col, 6 * scale + row, Purple);
 			//
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//
-			Return(col, 24 * scall + row, Red);
+			Return(col, 24 * scale + row, Red);
 			//
-			Return(col, 27 * scall + row, Blue);
+			Return(col, 27 * scale + row, Blue);
 			//
-			Return(col, 36 * scall + row, Blue);
+			Return(col, 36 * scale + row, Blue);
 			//
-			Return(col, 38 * scall + row, Blue);
+			Return(col, 38 * scale + row, Blue);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 		}
 
 	}
 	//九行目
-	for (int col = scall * 8; col < scall * 9; col++)
+	for (int col = scale * 8; col < scale * 9; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, White);
+			Return(col, 0 * scale + row, White);
 			//
-			Return(col, 5 * scall + row, Purple);
+			Return(col, 5 * scale + row, Purple);
 			//
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//				 
-			Return(col, 12 * scall + row, Purple);
+			Return(col, 12 * scale + row, Purple);
 			//				 
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//				 
-			Return(col, 18 * scall + row, Red);
+			Return(col, 18 * scale + row, Red);
 			//				 
-			Return(col, 25 * scall + row, Red);
+			Return(col, 25 * scale + row, Red);
 			//				 
-			Return(col, 27 * scall + row, Blue);
+			Return(col, 27 * scale + row, Blue);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 50 * scall + row, Green);
+			Return(col, 50 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//				 
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 			//				 
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//				 
-			Return(col, 70 * scall + row, White);
+			Return(col, 70 * scale + row, White);
 			//				 
-			Return(col, 72 * scall + row, White);
+			Return(col, 72 * scale + row, White);
 		
 		}
 
 	}
 	//十行目
-	for (int col = scall * 9; col < scall * 10; col++)
+	for (int col = scale * 9; col < scale * 10; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, White);
+			Return(col, 0 * scale + row, White);
 			//
-			Return(col, 4 * scall + row, Purple);
+			Return(col, 4 * scale + row, Purple);
 			//
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//				 
-			Return(col, 12 * scall + row, Purple);
+			Return(col, 12 * scale + row, Purple);
 			//				 
-			Return(col, 18 * scall + row, Red);
+			Return(col, 18 * scale + row, Red);
 			//				 
-			Return(col, 19 * scall + row, Red);
+			Return(col, 19 * scale + row, Red);
 			//				 
-			Return(col, 20 * scall + row, Red);
+			Return(col, 20 * scale + row, Red);
 			//				 
-			Return(col, 21 * scall + row, Red);
+			Return(col, 21 * scale + row, Red);
 			//				 
-			Return(col, 22 * scall + row, Red);
+			Return(col, 22 * scale + row, Red);
 			//				 
-			Return(col, 23 * scall + row, Red);
+			Return(col, 23 * scale + row, Red);
 			//				 
-			Return(col, 24 * scall + row, Red);
+			Return(col, 24 * scale + row, Red);
 			//				 
-			Return(col, 25 * scall + row, Red);
+			Return(col, 25 * scale + row, Red);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 63 * scall + row, Purple);
+			Return(col, 63 * scale + row, Purple);
 			//				 
-			Return(col, 64 * scall + row, Purple);
+			Return(col, 64 * scale + row, Purple);
 		}
 	}
 	//十一行目
-	for (int col = scall * 10; col < scall * 11; col++)
+	for (int col = scale * 10; col < scale * 11; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, White);
+			Return(col, 0 * scale + row, White);
 			//
-			Return(col, 1 * scall + row, White);
+			Return(col, 1 * scale + row, White);
 			//
-			Return(col, 3 * scall + row, Purple);
+			Return(col, 3 * scale + row, Purple);
 			//
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//
-			Return(col, 12 * scall + row, Purple);
+			Return(col, 12 * scale + row, Purple);
 			//
-			Return(col, 16 * scall + row, Yellow);
+			Return(col, 16 * scale + row, Yellow);
 			//
-			Return(col, 22 * scall + row, Red);
+			Return(col, 22 * scale + row, Red);
 			//
-			Return(col, 23 * scall + row, Red);
+			Return(col, 23 * scale + row, Red);
 			//
-			Return(col, 24 * scall + row, Red);
+			Return(col, 24 * scale + row, Red);
 			//
-			Return(col, 25 * scall + row, Red);
+			Return(col, 25 * scale + row, Red);
 			//
-			Return(col, 26 * scall + row, Red);
+			Return(col, 26 * scale + row, Red);
 			//
-			Return(col, 27 * scall + row, Red);
+			Return(col, 27 * scale + row, Red);
 			//
-			Return(col, 30 * scall + row, White);
+			Return(col, 30 * scale + row, White);
 			//
-			Return(col, 32 * scall + row, White);
+			Return(col, 32 * scale + row, White);
 			//
-			Return(col, 33 * scall + row, White);
+			Return(col, 33 * scale + row, White);
 			//
-			Return(col, 34 * scall + row, White);
+			Return(col, 34 * scale + row, White);
 			//
-			Return(col, 35 * scall + row, White);
+			Return(col, 35 * scale + row, White);
 			//
-			Return(col, 37 * scall + row, White);
+			Return(col, 37 * scale + row, White);
 			//
-			Return(col, 39 * scall + row, White);
+			Return(col, 39 * scale + row, White);
 			//
-			Return(col, 40 * scall + row, White);
+			Return(col, 40 * scale + row, White);
 			//
-			Return(col, 42 * scall + row, White);
+			Return(col, 42 * scale + row, White);
 			//
-			Return(col, 43 * scall + row, White);
+			Return(col, 43 * scale + row, White);
 			//
-			Return(col, 44 * scall + row, White);
+			Return(col, 44 * scale + row, White);
 			//
-			Return(col, 45 * scall + row, White);
+			Return(col, 45 * scale + row, White);
 			//
-			Return(col, 46 * scall + row, White);
+			Return(col, 46 * scale + row, White);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 63 * scall + row, Purple);
+			Return(col, 63 * scale + row, Purple);
 			//
-			Return(col, 65 * scall + row, Purple);
+			Return(col, 65 * scale + row, Purple);
 			//
-			Return(col, 66 * scall + row, Purple);
+			Return(col, 66 * scale + row, Purple);
 			//
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//
-			Return(col, 71 * scall + row, White);
+			Return(col, 71 * scale + row, White);
 			//
-			Return(col, 72 * scall + row, White);
+			Return(col, 72 * scale + row, White);
 		}
 	}
 	//十二行目
-	for (int col = scall * 11; col < scall * 12; col++)
+	for (int col = scale * 11; col < scale * 12; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, White);
+			Return(col, 0 * scale + row, White);
 			//
-			Return(col, 4 * scall + row, Purple);
+			Return(col, 4 * scale + row, Purple);
 			//
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//
-			Return(col, 12 * scall + row, Purple);
+			Return(col, 12 * scale + row, Purple);
 			//
-			Return(col, 18 * scall + row, Red);
+			Return(col, 18 * scale + row, Red);
 			//
-			Return(col, 19 * scall + row, Red);
+			Return(col, 19 * scale + row, Red);
 			//
-			Return(col, 20 * scall + row, Red);
+			Return(col, 20 * scale + row, Red);
 			//
-			Return(col, 21 * scall + row, Red);
+			Return(col, 21 * scale + row, Red);
 			//
-			Return(col, 22 * scall + row, Red);
+			Return(col, 22 * scale + row, Red);
 			//
-			Return(col, 23 * scall + row, Red);
+			Return(col, 23 * scale + row, Red);
 			//
-			Return(col, 24 * scall + row, Red);
+			Return(col, 24 * scale + row, Red);
 			//
-			Return(col, 25 * scall + row, Red);
+			Return(col, 25 * scale + row, Red);
 			//
-			Return(col, 31 * scall + row, White);
+			Return(col, 31 * scale + row, White);
 			//
-			Return(col, 32 * scall + row, White);
+			Return(col, 32 * scale + row, White);
 			//
-			Return(col, 33 * scall + row, White);
+			Return(col, 33 * scale + row, White);
 			//
-			Return(col, 35 * scall + row, White);
+			Return(col, 35 * scale + row, White);
 			//
-			Return(col, 36 * scall + row, White);
+			Return(col, 36 * scale + row, White);
 			//
-			Return(col, 37 * scall + row, White);
+			Return(col, 37 * scale + row, White);
 			//
-			Return(col, 38 * scall + row, White);
+			Return(col, 38 * scale + row, White);
 			//
-			Return(col, 39 * scall + row, White);
+			Return(col, 39 * scale + row, White);
 			//
-			Return(col, 40 * scall + row, White);
+			Return(col, 40 * scale + row, White);
 			//
-			Return(col, 41 * scall + row, White);
+			Return(col, 41 * scale + row, White);
 			//
-			Return(col, 42 * scall + row, White);
+			Return(col, 42 * scale + row, White);
 			//
-			Return(col, 43 * scall + row, White);
+			Return(col, 43 * scale + row, White);
 			//
-			Return(col, 44 * scall + row, White);
+			Return(col, 44 * scale + row, White);
 			//
-			Return(col, 45 * scall + row, White);
+			Return(col, 45 * scale + row, White);
 			//
-			Return(col, 46 * scall + row, White);
+			Return(col, 46 * scale + row, White);
 			//
-			Return(col, 63 * scall + row, Purple);
+			Return(col, 63 * scale + row, Purple);
 			//
-			Return(col, 64 * scall + row, Purple);
+			Return(col, 64 * scale + row, Purple);
 			//
-			Return(col, 65 * scall + row, Purple);
+			Return(col, 65 * scale + row, Purple);
 			//
-			Return(col, 66 * scall + row, Purple);
+			Return(col, 66 * scale + row, Purple);
 		}
 	}
 	//十三行目
-	for (int col = scall * 12; col < scall * 13; col++)
+	for (int col = scale * 12; col < scale * 13; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 1 * scall+ row, White);
+			Return(col, 1 * scale+ row, White);
 			//				 
-			Return(col, 5 * scall+ row, Purple);
+			Return(col, 5 * scale+ row, Purple);
 			//				 
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//				 
-			Return(col, 12 * scall + row, Purple);
+			Return(col, 12 * scale + row, Purple);
 			//				 
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//				 
-			Return(col, 18 * scall + row, Red);
+			Return(col, 18 * scale + row, Red);
 			//				 
-			Return(col, 25 * scall + row, Red);
+			Return(col, 25 * scale + row, Red);
 			//				 
-			Return(col, 27 * scall + row, Blue);
+			Return(col, 27 * scale + row, Blue);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//				 
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 			//				 
-			Return(col, 63 * scall + row, Purple);
+			Return(col, 63 * scale + row, Purple);
 			//				 
-			Return(col, 67 * scall + row, Purple);
+			Return(col, 67 * scale + row, Purple);
 			//				 
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//				 
-			Return(col, 70 * scall + row, White);
+			Return(col, 70 * scale + row, White);
 			//				 
-			Return(col, 71 * scall + row, White);
+			Return(col, 71 * scale + row, White);
 			//				 
-			Return(col, 72 * scall + row, White);
+			Return(col, 72 * scale + row, White);
 							 
 		}
 	}
 	//十四行目
-	for (int col = scall * 13; col < scall * 14; col++)
+	for (int col = scale * 13; col < scale * 14; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, White);
+			Return(col, 0 * scale + row, White);
 			//				 
-			Return(col, 6 * scall + row, Purple);
+			Return(col, 6 * scale + row, Purple);
 			//			
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//				 
-			Return(col, 24 * scall + row, Red);
+			Return(col, 24 * scale + row, Red);
 			//				 
-			Return(col, 27 * scall + row, Blue);
+			Return(col, 27 * scale + row, Blue);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//				 
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 			//				 
-			Return(col, 63 * scall + row, Purple);
+			Return(col, 63 * scale + row, Purple);
 			//				 
-			Return(col, 64 * scall + row, Purple);
+			Return(col, 64 * scale + row, Purple);
 			//				 
-			Return(col, 65 * scall + row, Purple);
+			Return(col, 65 * scale + row, Purple);
 			//				 
-			Return(col, 66 * scall + row, Purple);
+			Return(col, 66 * scale + row, Purple);
 			//				 
-			Return(col, 67 * scall + row, Purple);
+			Return(col, 67 * scale + row, Purple);
 		}
 	}
 	//十五行目
-	for (int col = scall * 14; col < scall * 15; col++)
+	for (int col = scale * 14; col < scale * 15; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 7 * scall + row, Purple);
+			Return(col, 7 * scale + row, Purple);
 			//				 
-			Return(col, 10 * scall + row, Purple);
+			Return(col, 10 * scale + row, Purple);
 			//				 
-			Return(col, 11 * scall + row, Purple);
+			Return(col, 11 * scale + row, Purple);
 			//				 
-			Return(col, 13 * scall + row, Yellow);
+			Return(col, 13 * scale + row, Yellow);
 			//				 
-			Return(col, 14 * scall + row, Yellow);
+			Return(col, 14 * scale + row, Yellow);
 			//				 
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//				 
-			Return(col, 23 * scall + row, Red);
+			Return(col, 23 * scale + row, Red);
 			//				 
-			Return(col, 28 * scall + row, Blue);
+			Return(col, 28 * scale + row, Blue);
 			//
-			Return(col, 37 * scall + row, Blue);
+			Return(col, 37 * scale + row, Blue);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 60 * scall + row, Green);
+			Return(col, 60 * scale + row, Green);
 			//				 
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 		}
 	}
 	//十六行目
-	for (int col = scall * 15; col < scall * 16; col++)
+	for (int col = scale * 15; col < scale * 16; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 2 * scall + row, Purple);
+			Return(col, 2 * scale + row, Purple);
 			//				 
-			Return(col, 3 * scall + row, Purple);
+			Return(col, 3 * scale + row, Purple);
 			//				 
-			Return(col, 4 * scall + row, Purple);
+			Return(col, 4 * scale + row, Purple);
 			//				 
-			Return(col, 5 * scall + row, Purple);
+			Return(col, 5 * scale + row, Purple);
 			//				 
-			Return(col, 6 * scall + row, Purple);
+			Return(col, 6 * scale + row, Purple);
 			//				 
-			Return(col, 7 * scall + row, Purple);
+			Return(col, 7 * scale + row, Purple);
 			//			 
-			Return(col, 8 * scall + row, Purple);
+			Return(col, 8 * scale + row, Purple);
 			//				 
-			Return(col, 10 * scall + row, Purple);
+			Return(col, 10 * scale + row, Purple);
 			//
-			Return(col, 28 * scall + row, Blue);
+			Return(col, 28 * scale + row, Blue);
 			//
-			Return(col, 37 * scall + row, Blue);
+			Return(col, 37 * scale + row, Blue);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 60 * scall + row, Green);
+			Return(col, 60 * scale + row, Green);
 			//				 
-			Return(col, 70 * scall + row, White);
+			Return(col, 70 * scale + row, White);
 		}
 	}
 	//十七行目
-	for (int col = scall * 16; col < scall * 17; col++)
+	for (int col = scale * 16; col < scale * 17; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//				 
-			Return(col, 9 * scall + row, Purple);
+			Return(col, 9 * scale + row, Purple);
 			//				 
-			Return(col, 10 * scall + row, Purple);
+			Return(col, 10 * scale + row, Purple);
 			//				 
-			Return(col, 13 * scall + row, Yellow);
+			Return(col, 13 * scale + row, Yellow);
 			//				 
-			Return(col, 14 * scall + row, Yellow);
+			Return(col, 14 * scale + row, Yellow);
 			//				 
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//			 
-			Return(col, 24 * scall + row, White);
+			Return(col, 24 * scale + row, White);
 			//				 
-			Return(col, 29 * scall + row, Blue);
+			Return(col, 29 * scale + row, Blue);
 			//
-			Return(col, 28 * scall + row, Blue);
+			Return(col, 28 * scale + row, Blue);
 			//
-			Return(col, 36 * scall + row, Blue);
+			Return(col, 36 * scale + row, Blue);
 			//				 
-			Return(col, 38 * scall + row, Blue);
+			Return(col, 38 * scale + row, Blue);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 
 
 		}
 	}
 	//十八行目
-	for (int col = scall * 17; col < scall * 18; col++)
+	for (int col = scale * 17; col < scale * 18; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//				 
-			Return(col, 8 * scall + row, Purple);
+			Return(col, 8 * scale + row, Purple);
 			//				 
-			Return(col, 9 * scall + row, Purple);
+			Return(col, 9 * scale + row, Purple);
 			//				 
-			Return(col, 19 * scall + row, White);
+			Return(col, 19 * scale + row, White);
 			//				 
-			Return(col, 20 * scall + row, White);
+			Return(col, 20 * scale + row, White);
 			//				 
-			Return(col, 21 * scall + row, White);
+			Return(col, 21 * scale + row, White);
 			//
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//				 
-			Return(col, 23 * scall + row, White);
+			Return(col, 23 * scale + row, White);
 			//
-			Return(col, 29 * scall + row, Blue);
+			Return(col, 29 * scale + row, Blue);
 			//
-			Return(col, 36 * scall + row, Blue);
+			Return(col, 36 * scale + row, Blue);
 			//
-			Return(col, 38 * scall + row, Blue);
+			Return(col, 38 * scale + row, Blue);
 			//
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//
-			Return(col, 70 * scall + row, White);
+			Return(col, 70 * scale + row, White);
 		}
 	}
 	//十九行目
-	for (int col = scall * 18; col < scall * 19; col++)
+	for (int col = scale * 18; col < scale * 19; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//				 
-			Return(col, 7 * scall + row, Purple);
+			Return(col, 7 * scale + row, Purple);
 			//				 
-			Return(col, 8 * scall + row, Purple);
+			Return(col, 8 * scale + row, Purple);
 			//
-			Return(col, 14 * scall + row, Yellow);
+			Return(col, 14 * scale + row, Yellow);
 			//				 
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//				 
-			Return(col, 19 * scall + row, White);
+			Return(col, 19 * scale + row, White);
 			//				 
-			Return(col, 20 * scall + row, White);
+			Return(col, 20 * scale + row, White);
 			//				 
-			Return(col, 21 * scall + row, White);
+			Return(col, 21 * scale + row, White);
 			//
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//				 
-			Return(col, 23 * scall + row, White);
+			Return(col, 23 * scale + row, White);
 			//				 
-			Return(col, 24 * scall + row, White);
+			Return(col, 24 * scale + row, White);
 			//				 
-			Return(col, 30 * scall + row, Blue);
+			Return(col, 30 * scale + row, Blue);
 			//				 
-			Return(col, 35 * scall + row, Blue);
+			Return(col, 35 * scale + row, Blue);
 			//
-			Return(col, 39 * scall + row, Blue);
+			Return(col, 39 * scale + row, Blue);
 			//				 
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//				 
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 50 * scall + row, Green);
+			Return(col, 50 * scale + row, Green);
 			//				 
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//				 
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//				 
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//				 
-			Return(col, 60 * scall + row, Green);
+			Return(col, 60 * scale + row, Green);
 			//
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 			//
-			Return(col, 70 * scall + row, White);
+			Return(col, 70 * scale + row, White);
 		}
 	}
 	//二十行目
-	for (int col = scall * 19; col < scall * 20; col++)
+	for (int col = scale * 19; col < scale * 20; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 0 * scall + row, Blue);
+			Return(col, 0 * scale + row, Blue);
 			//				 
-			Return(col, 5 * scall + row, Purple);
+			Return(col, 5 * scale + row, Purple);
 			//				 
-			Return(col, 6 * scall + row, Purple);
+			Return(col, 6 * scale + row, Purple);
 			//
-			Return(col, 7 * scall + row, Purple);
+			Return(col, 7 * scale + row, Purple);
 			//				 
-			Return(col, 20 * scall + row, White);
+			Return(col, 20 * scale + row, White);
 			//				 
-			Return(col, 21 * scall + row, White);
+			Return(col, 21 * scale + row, White);
 			//				 
-			Return(col, 23 * scall + row, White);
+			Return(col, 23 * scale + row, White);
 			//				 
-			Return(col, 24 * scall + row, White);
+			Return(col, 24 * scale + row, White);
 			//
-			Return(col, 31 * scall + row, Blue);
+			Return(col, 31 * scale + row, Blue);
 			//				 
-			Return(col, 34 * scall + row, Blue);
+			Return(col, 34 * scale + row, Blue);
 			//				 
-			Return(col, 40 * scall + row, Blue);
+			Return(col, 40 * scale + row, Blue);
 			//				 
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//				 
-			Return(col, 51 * scall + row, Green);
+			Return(col, 51 * scale + row, Green);
 			//
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//
-			Return(col, 61 * scall + row, Green);
+			Return(col, 61 * scale + row, Green);
 			}
 	}
 	//二十一行目
-	for (int col = scall * 20; col < scall * 21; col++)
+	for (int col = scale * 20; col < scale * 21; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 14 * scall + row, Yellow);
+			Return(col, 14 * scale + row, Yellow);
 			//				 
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//
-			Return(col, 20 * scall + row, White);
+			Return(col, 20 * scale + row, White);
 			//				 
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//
-			Return(col, 23 * scall + row, White);
+			Return(col, 23 * scale + row, White);
 			//				 
-			Return(col, 32 * scall + row, Blue);
+			Return(col, 32 * scale + row, Blue);
 			//
-			Return(col, 33 * scall + row, Blue);
+			Return(col, 33 * scale + row, Blue);
 			//				 
-			Return(col, 41 * scall + row, Blue);
+			Return(col, 41 * scale + row, Blue);
 			//
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//				 
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//				 
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 69 * scall + row, White);
+			Return(col, 69 * scale + row, White);
 			//
-			Return(col, 71 * scall + row, White);
+			Return(col, 71 * scale + row, White);
 		}
 	}
 	//二十二行目
-	for (int col = scall * 21; col < scall * 22; col++)
+	for (int col = scale * 21; col < scale * 22; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 20 * scall + row, White);
+			Return(col, 20 * scale + row, White);
 			//				 
-			Return(col, 21 * scall + row, White);
+			Return(col, 21 * scale + row, White);
 			//
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//
-			Return(col, 23 * scall + row, White);
+			Return(col, 23 * scale + row, White);
 			//
-			Return(col, 24 * scall + row, White);
+			Return(col, 24 * scale + row, White);
 			//
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//
-			Return(col, 46 * scall + row, Green);
+			Return(col, 46 * scale + row, Green);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 49 * scall + row, Green);
+			Return(col, 49 * scale + row, Green);
 			//
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//
-			Return(col, 56 * scall + row, Green);
+			Return(col, 56 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
-			Return(col, 59 * scall + row, Green);
+			Return(col, 59 * scale + row, Green);
 			//
-			Return(col, 70 * scall + row, White);
+			Return(col, 70 * scale + row, White);
 
 		}
 	}
 	//二十三行目
-	for (int col = scall * 22; col < scall * 23; col++)
+	for (int col = scale * 22; col < scale * 23; col++)
 	{
-		for (int row = 0; row < scall; row++)
+		for (int row = 0; row < scale; row++)
 		{
-			Return(col, 15 * scall + row, Yellow);
+			Return(col, 15 * scale + row, Yellow);
 			//
-			Return(col, 20 * scall + row, White);
+			Return(col, 20 * scale + row, White);
 			//				 
-			Return(col, 21 * scall + row, White);
+			Return(col, 21 * scale + row, White);
 			//
-			Return(col, 22 * scall + row, White);
+			Return(col, 22 * scale + row, White);
 			//
-			Return(col, 23 * scall + row, White);
+			Return(col, 23 * scale + row, White);
 			//
-			Return(col, 24 * scall + row, White);
+			Return(col, 24 * scale + row, White);
 			//
-			Return(col, 43 * scall + row, Green);
+			Return(col, 43 * scale + row, Green);
 			//
-			Return(col, 44 * scall + row, Green);
+			Return(col, 44 * scale + row, Green);
 			//
-			Return(col, 48 * scall + row, Green);
+			Return(col, 48 * scale + row, Green);
 			//
-			Return(col, 53 * scall + row, Green);
+			Return(col, 53 * scale + row, Green);
 			//
-			Return(col, 54 * scall + row, Green);
+			Return(col, 54 * scale + row, Green);
 			//
-			Return(col, 58 * scall + row, Green);
+			Return(col, 58 * scale + row, Green);
 			//
 		}
 	}
@@ -1162,7 +1162,6 @@ void BitMap::Monochrome()
 
 	for (int i= 0;i<73;i++)
 	{
-
 		for (int j = 0; j < 23; j++)
 		{
 			array[(i * 23) + j] = inverse_array[(inverse_count * 23) + j];
@@ -1175,39 +1174,47 @@ void BitMap::Monochrome()
 	// 画像データ(高さ)
 	for (int i = 0; i < 73 ; i++)
 	{
-		for (int j = 0; j < 23; j++)
+		for (int height_scale = 0; height_scale < scale; height_scale++)
 		{
-			for (int k = 0; k < color_number; k++)
+			for (int j = 0; j < 23; j++)
 			{
-				switch (array[(i * 23) + j])
+				for (int width_scale = 0;width_scale < scale;width_scale++)
 				{
-				case 0x0:
-					RGB = 0xffffff;
-					break;
-				case 0x1:
-					RGB = 0x000000;
-					break;
+					for (int k = 0; k < color_number; k++)
+					{
+						switch (array[(i * 23) + j])
+						{
+						case 0x0:
+							RGB = 0xffffff;
+							break;
+						case 0x1:
+							RGB = 0x000000;
+							break;
+						}
+						if (k == Blue)
+						{
+							FileContent[DataStart] = (RGB & 0x0000ff) >> 0;
+						}
+						if (k == Green)
+						{
+							FileContent[DataStart] = (RGB & 0x00ff00) >> 8;
+						}
+						if (k == Red)
+						{
+							FileContent[DataStart] = (RGB & 0xff0000) >> 16;
+						}
+						DataStart++;
+					}
 				}
-				if (k == Blue)
-				{
-					FileContent[DataStart] = (RGB & 0x0000ff) >> 0;
-				}
-				if (k == Green)
-				{
-					FileContent[DataStart] = (RGB & 0x00ff00) >> 8;
-				}
-				if (k == Red)
-				{
-					FileContent[DataStart] = (RGB & 0xff0000) >> 16;
-				}
-				DataStart++;
 			}
-		}
-		
-		for (int j = 0; j < pading; j++)
-		{
-			FileContent[DataStart] = 0x00;
-			DataStart++;
+			if (BitmapColor == false)
+			{
+				for (int j = 0; j < 2; j++)
+				{
+					FileContent[DataStart] = 0x00;
+					DataStart++;
+				}
+			}
 		}
 		
 		

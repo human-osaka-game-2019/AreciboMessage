@@ -14,7 +14,7 @@ class BitMap
 private:
 
 	//色付きがtrueで拡縮可
-	//白黒がfalseで拡縮不可・defaultはscall = 1
+	//白黒がfalseで拡縮不可・defaultはscale = 1
 	bool BitmapColor = false;
 
 
@@ -51,14 +51,15 @@ private:
 	};
 
 	//画像を大きくする倍数
-	//1から14まで
-	static const int scall = 1;
+	//BitmapColor == trueなら 1から14まで
+	//BitmapColor == falseなら10だけ
+	static const int scale = 10;
 
 	//画像の幅
-	static const int picture_width = 23 *scall;
+	static const int picture_width = 23 *scale;
 
 	//画像の高さ
-	static const int picture_height = 73 *scall;
+	static const int picture_height = 73 *scale;
 
 	static const int remainder = (picture_width * color_number % 4);
 
@@ -88,7 +89,6 @@ private:
 	char FileContent[FileSize] = { 0 };
 
 	//モノクロ用/////////////////////////////////////////////
-
 	char array[1679] = {};
 	char inverse_array[1679];
 	char binary[53*4];
