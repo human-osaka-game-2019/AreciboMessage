@@ -142,28 +142,32 @@ void BitMap::CreateFile(int height,int width,char array[])
 
 }
 
-void BitMap::CreateFile_x10(int height, int width, char array[],int scale)
+void BitMap::CreateFileScaling(int height, int width, char array[],int scale)
 {
+	int c = 0;
+	int padding = 0;
+	int ArrayNumber = 1679;
+
+	if (scale % 4 != 0)
+	{
+		padding = 4 - (((width * scale) * 3) % 4);
+	}
+	
 	std::ofstream outputfile("test.bmp");
 
 	// ファイル形式
 	FileContent[0] = 0x42;
 	FileContent[1] = 0x4D;
 
-	int Height = height * scale;
-	int Width = width * scale;
-	int FileSize = Height * Width * 3;
+	int Height = height * scale; // 高さ
+	int Width = width * scale;   // 幅 
+	int PaddingSize = (padding * Height); // ペンディングのサイズ
+	int FileSize = ((Height * Width) * 3) + PaddingSize+ 54; // ファイルサイズ
 
-	//for (int i = 0; i < 4; i++)
-	//{
-	//	FileContent[i + 2] = (FileSize >> (24 - (8 * i))) & 0x000000FF;
-	//}
-
-	//ファイルサイズ
-	FileContent[2] = 0x7E;
-	FileContent[3] = 0xB5;
-	FileContent[4] = 0x07;
-	FileContent[5] = 0x00;
+	for (int i = 0; i < 4; i++)
+	{
+		FileContent[i + 2] = (FileSize >> (24 - (8 * i))) & 0x000000FF;
+	}
 
 	// 予約領域(常に[ 0 ])
 	FileContent[6] = 0x00;
@@ -186,16 +190,16 @@ void BitMap::CreateFile_x10(int height, int width, char array[],int scale)
 	FileContent[17] = 0x00;
 
 	// 幅
-	FileContent[18] = 0xE6;
-	FileContent[19] = 0x00;
-	FileContent[20] = 0x00;
-	FileContent[21] = 0x00;
+	for (int j = 0; j < 4; j++)
+	{
+		FileContent[j + 18] = (Width >> (8 * j)) & 0x000000FF;
+	}
 
 	// 高さ
-	FileContent[22] = 0xDA;
-	FileContent[23] = 0x02;
-	FileContent[24] = 0x00;
-	FileContent[25] = 0x00;
+	for (int r = 0; r < 4; r++)
+	{
+		FileContent[r + 22] = (Height >> (8 * r)) & 0x000000FF;
+	}
 
 	// プレーン数(常に[ 1 ])
 	FileContent[26] = 0x01;
@@ -213,10 +217,11 @@ void BitMap::CreateFile_x10(int height, int width, char array[],int scale)
 
 
 	// 画像データサイズ
-	FileContent[34] = 0x48;
-	FileContent[35] = 0xB5;
-	FileContent[36] = 0x07;
-	FileContent[37] = 0x00;
+	int pictureSize = (Height * Width * 3) + (Height * padding);
+	for (int i = 0; i < 4; i++)
+	{
+		FileContent[i + 34] = (pictureSize >> (24 - (8 * i))) & 0x000000FF;
+	}
 
 	// 水平解像度
 	FileContent[38] = 0x00;
@@ -242,14 +247,6 @@ void BitMap::CreateFile_x10(int height, int width, char array[],int scale)
 	FileContent[52] = 0x00;
 	FileContent[53] = 0x00;
 
-
-
-	int c = 0;
-	int ArrayNumber = 1679;
-
-	int pading = 4 - (((width* scale) * 3) % 4);
-
-	
 		// 画像データ(高さ)
 	for (int a = 0; a < height; a++)
 	{
@@ -267,10 +264,10 @@ void BitMap::CreateFile_x10(int height, int width, char array[],int scale)
 						switch (array[ArrayNumber + b])
 						{
 						case 0:
-							FileContent[DataStart] = 0xFF;
+							FileContent[DataStart] = 0xFF; // 白
 							break;
 						case 1:
-							FileContent[DataStart] = 0x00;
+							FileContent[DataStart] = 0x00; // 黒
 							break;
 						default:
 							break;
@@ -283,7 +280,7 @@ void BitMap::CreateFile_x10(int height, int width, char array[],int scale)
 
 
 			}
-			for (int pad = 0; pad < pading; pad++)
+			for (int pad = 0; pad < padding; pad++)
 			{
 				FileContent[DataStart] = 0x00;
 				DataStart++;

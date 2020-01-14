@@ -4,23 +4,8 @@
 
 #include <stdio.h>
 
-void Change(char a,int* b)
-{
-	
-}
-
 int main()
 {
-	int a = 0x12345678;
-	char b = (a >> 24)& 0x000000FF;
-	int c[8];
-	int g = 7;
-	for (int i = 0;i < 8; i++)
-	{
-		c[i] = (b >> g) & 0x00000001;
-		g -= 1;
-	}
-
 	int BaseData[53] =
 	{
 		0x02A80050, 0x50122225, 0x95555240, 0x00000001, 0x80000D00,
@@ -81,7 +66,7 @@ int main()
 
 	BitMap bitmap;
 
-	bitmap.CreateFile_x10(73, 23, Aresibo,10);
+	bitmap.CreateFileScaling(73, 23, Aresibo,12);
 
 
 
