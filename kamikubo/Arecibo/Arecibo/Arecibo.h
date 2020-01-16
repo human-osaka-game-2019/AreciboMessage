@@ -1,16 +1,27 @@
+﻿/**
+* @file Arecibo.h
+*/
+
 #ifndef ARECIBO_H_
 #define ARECIBO_H_
 
 #include <fstream>
-#include<vector>
+#include <vector>
 
+/**
+* @brief アレシボメッセージを出力するクラス
+*/
 class Arecibo
 {
 private:
 
+	//! アレシボメッセージの元の幅
 	int wight = 23;
+
+	//! アレシボメッセージの元の高さ
 	int height = 73;
 
+	//! 最大15倍まで変更可能な倍率
 	int magnification = 10;
 
 	std::vector< unsigned int> arecibo_date = {
@@ -26,16 +37,27 @@ private:
 0xE00C0060, 0x340160CC, 0x06611414, 0x42244880, 0x45100084,
 0x20010040, 0x00940079, 0xF4F00000 };
 
+	//! 最終的なデータを入れるvector
 	std::vector<unsigned char> arecibo_bitmap;
 
 	std::vector<unsigned char> bitmap;
-
 	std::vector<unsigned char> bitmap2;
 
 public:
-
+	
+	/**
+	* @brief アレシボメッセージを作成する関数
+	*/
 	void CreateArecibo();
+
+	/**
+	* @brief データをビット演算にて使えるデータに変換する関数
+	*/
 	void SetDate();
+
+	/**
+	* @brief データをファイルに書き込む関数
+	*/
 	void SetFile();
 };
 
