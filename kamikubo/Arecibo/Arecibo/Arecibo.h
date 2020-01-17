@@ -21,7 +21,7 @@ private:
 	//! アレシボメッセージの元の高さ
 	int height = 73;
 
-	//! 最大15倍まで変更可能な倍率
+	//! 変更可能な倍率
 	int magnification = 10;
 
 	std::vector< unsigned int> arecibo_date = {

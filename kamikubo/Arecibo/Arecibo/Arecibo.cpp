@@ -108,11 +108,14 @@ void Arecibo::SetDate()
 
 			}
 
-			for (int h = 4; h > (magnification % 4); h--)
+			if (magnification % 4 != 0)
 			{
-				arecibo_bitmap.push_back(0x00);
-			}
 
+				for (int h = 4; h > (magnification % 4); h--)
+				{
+					arecibo_bitmap.push_back(0x00);
+				}
+			}
 		}
 	}
 }
