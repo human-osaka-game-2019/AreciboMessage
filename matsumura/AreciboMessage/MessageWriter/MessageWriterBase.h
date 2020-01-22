@@ -1,0 +1,81 @@
+﻿#ifndef MESSAGE_WRITER_BASE_
+#define MESSAGE_WRITER_BASE_
+
+#include <functional>
+
+#include "MessageData/BitContainer.h"
+#include "MessageWriter/Constants.h"
+#include "MessageWriter/IMessageWriter.h"
+
+namespace arecibo_message {
+namespace message_writer {
+
+/// <summary>
+/// メッセージ出力基底クラス
+/// </summary>
+template <class OutputType>
+class MessageWriterBase : public IMessageWriter {
+public:
+	using ValueGenerator = std::function<OutputType(bool)>;
+
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
+	/// <param name="message">メッセージデータ</param>
+	/// <param name="valueGenerator">出力する値を生成する関数オブジェクト</param>
+	MessageWriterBase(const MessageBits& message, ValueGenerator valueGenerator)
+		: message(message), outputValue(valueGenerator) {}
+
+	/// <summary>
+	/// メッセージを書き出す
+	/// </summary>
+	void Write() override {
+		// Template Methodパターン
+		for (Size row = 0; row < MESSAGE_HEIGHT; row++) {
+			// 1行書き出す
+			WriteLine(row);
+
+			// 次の行に移動
+			MoveToNextLine();
+		}
+
+		// 仕上げ処理
+		Finalize();
+	}
+
+protected:
+	/// <summary>
+	/// アレシボメッセージの1マスを書き出す
+	/// </summary>
+	/// <param name="row">行(0～72)</param>
+	/// <param name="col">列(0～22)</param>
+	/// <param name="value">そのセルの値</param>
+	/// <remarks>メッセージデータの左上を(0, 0)として扱う</remarks>
+	virtual void WriteCell(Size row, Size col, OutputType value) = 0;
+
+	/// <summary>
+	/// 次の行に移動する
+	/// </summary>
+	virtual void MoveToNextLine() {}
+
+	/// <summary>
+	/// 仕上げ処理
+	/// </summary>
+	virtual void Finalize() {}
+
+private:
+	const MessageBits& message;
+	ValueGenerator outputValue;
+
+	void WriteLine(Size row) {
+		for (Size col = 0; col < MESSAGE_WIDTH; col++) {
+			bool bit = message[row * MESSAGE_WIDTH + col];
+			WriteCell(row, col, outputValue(bit));
+		}
+	}
+};
+
+} // namespace message_writer
+} // namespace arecibo_message
+
+#endif // !MESSAGE_WRITER_BASE_
