@@ -1,5 +1,5 @@
-﻿#ifndef MESSAGE_WRITER_BASE_
-#define MESSAGE_WRITER_BASE_
+﻿#ifndef MESSAGE_WRITER_BASE_H_
+#define MESSAGE_WRITER_BASE_H_
 
 #include <functional>
 
@@ -78,4 +78,4 @@ private:
 } // namespace message_writer
 } // namespace arecibo_message
 
-#endif // !MESSAGE_WRITER_BASE_
+#endif // !MESSAGE_WRITER_BASE_H_

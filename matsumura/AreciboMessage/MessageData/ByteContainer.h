@@ -1,9 +1,6 @@
 ﻿#ifndef BYTE_CONTAINER_H_
 #define BYTE_CONTAINER_H_
 
-#include <cstdint>
-#include <vector>
-
 #include "IUncopyable.h"
 
 namespace arecibo_message {

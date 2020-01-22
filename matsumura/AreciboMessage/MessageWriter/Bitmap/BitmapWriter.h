@@ -2,7 +2,6 @@
 #define BITMAP_WRITER_H_
 
 #include <memory>
-#include <vector>
 
 #include "MessageWriter/Bitmap/Bitmap.h"
 #include "MessageWriter/MessageWriterBase.h"
