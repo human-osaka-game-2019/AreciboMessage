@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="MessageData\BitContainerTest.cpp">
+      <Filter>MessageData</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageData\ByteContainerTest.cpp">
+      <Filter>MessageData</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWriter\Bitmap\PaddingsTest.cpp">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWriter\Bitmap\PixelIndicesTest.cpp">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="MessageData">
+      <UniqueIdentifier>{ace70056-ca7c-4004-bfdc-a8daa0eec13c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageWriter">
+      <UniqueIdentifier>{e0d49c06-3151-4350-b5ea-5da241ee488d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageWriter\Bitmap">
+      <UniqueIdentifier>{4f0e9650-176f-44c9-93e3-eb79e3c92488}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

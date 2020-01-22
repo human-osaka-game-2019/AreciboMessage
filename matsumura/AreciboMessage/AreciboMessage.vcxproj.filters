@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{73908c27-49c8-43b2-8c8a-843ee6e56a78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageData">
+      <UniqueIdentifier>{1822afb4-00fe-4433-9e11-0eca06eba26e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageWriter">
+      <UniqueIdentifier>{c842f4c0-c7f1-4879-9152-cf53ed8ae68c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageWriter\Bitmap">
+      <UniqueIdentifier>{38ef7aa2-e0c9-4345-a71b-c0dee276b4db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MessageWriter\Console">
+      <UniqueIdentifier>{25016b7a-11e4-44c6-9067-92cbef77af9e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AreciboMessage.cpp" />
+    <ClCompile Include="Utility\Settings.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWriter\MessageWriterFactory.cpp">
+      <Filter>MessageWriter</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWriter\Bitmap\Bitmap.cpp">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWriter\Bitmap\BitmapWriter.cpp">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWriter\Bitmap\PixelIndices.cpp">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageData\ByteContainer.cpp">
+      <Filter>MessageData</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageWriter\Bitmap\Paddings.cpp">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AreciboMessage.h" />
+    <ClInclude Include="Utility\Singleton.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Settings.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="IUncopyable.h" />
+    <ClInclude Include="Utility\DetectMemoryLeaks.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\Constants.h">
+      <Filter>MessageWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\IMessageWriter.h">
+      <Filter>MessageWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\MessageWriterBase.h">
+      <Filter>MessageWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\MessageWriterFactory.h">
+      <Filter>MessageWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\Console\ConsoleWriter.h">
+      <Filter>MessageWriter\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\Bitmap\Bitmap.h">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\Bitmap\BitmapWriter.h">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\Bitmap\PixelIndices.h">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageData\BitContainer.h">
+      <Filter>MessageData</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageData\ByteContainer.h">
+      <Filter>MessageData</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeAliases.h" />
+    <ClInclude Include="MessageWriter\Bitmap\Paddings.h">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageWriter\Bitmap\Color.h">
+      <Filter>MessageWriter\Bitmap</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
