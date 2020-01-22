@@ -17,8 +17,10 @@ std::unique_ptr<BitContainer> pBitContainer;
 // Constructor
 // ========================================================================================
 AreciboMessage::AreciboMessage(const MessageSource& message) {
+#if _DEBUG
 	// メモリリーク検知開始
 	utility::StartDetectingMemoryLeaks();
+#endif
 
 	// 32ビットのデータ列を8ビットのデータ列に変換して保持しておく
 	pBitContainer = std::make_unique<BitContainer>(message);
