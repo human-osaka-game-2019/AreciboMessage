@@ -20,7 +20,7 @@ public:
 	/// コンストラクタ
 	/// </summary>
 	/// <param name="message">メッセージデータ</param>
-	/// <remarks>bitが0なら■、1なら□を出力する</remarks>
+	/// <remarks>bitが1なら■、0なら□を出力する</remarks>
 	ConsoleWriter(const MessageBits& message)
 		: MessageWriterBase(message, [](bool bit) { return bit ? "■" : "□"; }) {}
 
