@@ -1,6 +1,9 @@
 ﻿#ifndef ARECIBO_MESSAGE_H_
 #define ARECIBO_MESSAGE_H_
 
+#define WIDTH 23
+#define HEIGHT 73
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -14,25 +17,30 @@ using std::vector;
 using std::cout;
 using std::endl;
 
-using UINT = unsigned int;
+using UINT32 = uint32_t;
 
 class Message :public Singleton<Message> {
+
+	friend class Singleton;
 public:
 
-	inline void SetData(vector<UINT> in_data) {
+	inline void SetData(vector<UINT32> in_data) {
 		Data = in_data;
 	}
 
-	//void Convert();
+	void Convert();
 
 protected:
 
 private:
-	friend class Singleton;
 	Message& operator=(const Message&) = delete;
-	Message&& operator=(const Message&&) = delete;
-	vector<UINT> Data;
+	Message&& operator=(Message&&) = delete;
+
+	vector<UINT32> Data;
 	Message() = default;
+
+	void ByteSwap();
+	void ToBinary();
 };
 
 #endif //ARECIBO_MASSEGE_H_
