@@ -5,10 +5,11 @@
 #include "MessageWriter/MessageWriterFactory.h"
 
 namespace arecibo_message {
-using message_data::BitContainer;
+
+using BitContainer = message_data::BitContainer;
 
 namespace {
-UniquePtr<BitContainer> pBitContainer;
+UniquePtr<BitContainer> pMessageBits;
 }
 
 // ========================================================================================
@@ -21,7 +22,7 @@ AreciboMessage::AreciboMessage(const UInt32Collection& message) {
 #endif
 
 	// 32ビットのデータ列を8ビットのデータ列に変換して保持しておく
-	pBitContainer = std::make_unique<BitContainer>(message);
+	pMessageBits = std::make_unique<BitContainer>(message);
 }
 
 // ========================================================================================
@@ -35,8 +36,8 @@ AreciboMessage::~AreciboMessage() {}
 void AreciboMessage::Output() const {
 	// MessageWriterのインスタンスを生成して、書き出し先にメッセージを出力する
 	using Factory = message_writer::MessageWriterFactory;
-	auto pWriter = Factory::Instance().CreateWriter(*pBitContainer);
+	auto pWriter = Factory::Instance().CreateWriter(*pMessageBits);
 	pWriter->Write();
 }
 
-} // namespace arecibo_message 
+} // namespace arecibo_message

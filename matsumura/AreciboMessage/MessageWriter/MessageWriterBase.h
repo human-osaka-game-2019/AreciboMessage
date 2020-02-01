@@ -16,15 +16,16 @@ namespace message_writer {
 template <class OutputType>
 class MessageWriterBase : public IMessageWriter {
 public:
+	using BitContainer = message_data::BitContainer;
 	using ValueGenerator = std::function<OutputType(bool)>;
 
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	/// <param name="message">メッセージデータ</param>
+	/// <param name="messageBits">メッセージデータ</param>
 	/// <param name="valueGenerator">出力する値を生成する関数オブジェクト</param>
-	MessageWriterBase(const MessageBits& message, ValueGenerator valueGenerator)
-		: message(message), outputValue(valueGenerator) {}
+	MessageWriterBase(const BitContainer& messageBits, ValueGenerator valueGenerator)
+		: messageBits(messageBits), outputValue(valueGenerator) {}
 
 	/// <summary>
 	/// メッセージを書き出す
@@ -64,13 +65,13 @@ protected:
 	virtual void Finalize() {}
 
 private:
-	const MessageBits& message;
+	const BitContainer& messageBits;
 	ValueGenerator outputValue;
 
 	void WriteLine(Index row) {
 		auto startIndex = row * MESSAGE_WIDTH;
 		for (Index col = 0; col < MESSAGE_WIDTH; col++) {
-			bool bit = message[startIndex + col];
+			bool bit = messageBits[startIndex + col];
 			WriteCell(row, col, outputValue(bit));
 		}
 	}

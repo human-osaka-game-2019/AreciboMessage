@@ -143,7 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AreciboMessage.cpp" />
-    <ClCompile Include="MessageData\ByteContainer.cpp" />
+    <ClCompile Include="MessageData\BitContainer.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\Bitmap.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\BitmapHeader.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\BitmapWriter.cpp" />
@@ -155,7 +155,6 @@
     <ClInclude Include="AreciboMessage.h" />
     <ClInclude Include="IUncopyable.h" />
     <ClInclude Include="MessageData\BitContainer.h" />
-    <ClInclude Include="MessageData\ByteContainer.h" />
     <ClInclude Include="MessageWriter\Bitmap\Bitmap.h" />
     <ClInclude Include="MessageWriter\Bitmap\BitmapHeader.h" />
     <ClInclude Include="MessageWriter\Bitmap\BitmapWriter.h" />

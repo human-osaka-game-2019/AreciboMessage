@@ -38,11 +38,11 @@
     <ClCompile Include="MessageWriter\Bitmap\PixelIndices.cpp">
       <Filter>MessageWriter\Bitmap</Filter>
     </ClCompile>
-    <ClCompile Include="MessageData\ByteContainer.cpp">
-      <Filter>MessageData</Filter>
-    </ClCompile>
     <ClCompile Include="MessageWriter\Bitmap\BitmapHeader.cpp">
       <Filter>MessageWriter\Bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageData\BitContainer.cpp">
+      <Filter>MessageData</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,9 +82,6 @@
       <Filter>MessageWriter\Bitmap</Filter>
     </ClInclude>
     <ClInclude Include="MessageData\BitContainer.h">
-      <Filter>MessageData</Filter>
-    </ClInclude>
-    <ClInclude Include="MessageData\ByteContainer.h">
       <Filter>MessageData</Filter>
     </ClInclude>
     <ClInclude Include="TypeAliases.h" />

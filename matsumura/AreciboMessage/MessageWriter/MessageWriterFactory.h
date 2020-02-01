@@ -1,6 +1,7 @@
 ﻿#ifndef MESSAGE_WRITER_FACTORY_H_
 #define MESSAGE_WRITER_FACTORY_H_
 
+#include "MessageData/BitContainer.h"
 #include "MessageWriter/IMessageWriter.h"
 #include "Utility/Singleton.h"
 
@@ -15,9 +16,9 @@ public:
 	/// <summary>
 	/// MessageWriterを生成する
 	/// </summary>
-	/// <param name="message">32ビットのデータの集合</param>
+	/// <param name="messageBits">32ビットのデータの集合</param>
 	/// <returns>MessageWriterのインスタンス</returns>
-	UniquePtr<IMessageWriter> CreateWriter(const MessageBits& message);
+	UniquePtr<IMessageWriter> CreateWriter(const message_data::BitContainer& messageBits);
 
 private:
 	friend utility::Singleton<MessageWriterFactory>;

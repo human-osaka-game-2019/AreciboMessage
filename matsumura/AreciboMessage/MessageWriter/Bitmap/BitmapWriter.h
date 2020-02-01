@@ -18,8 +18,8 @@ public:
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	/// <param name="message">メッセージデータ</param>
-	explicit BitmapWriter(const message_data::BitContainer& message);
+	/// <param name="messageBits">メッセージデータ</param>
+	explicit BitmapWriter(const BitContainer& messageBits);
 
 protected:
 	/// <summary>

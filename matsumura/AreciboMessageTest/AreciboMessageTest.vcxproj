@@ -37,7 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MessageData\BitContainerTest.cpp" />
-    <ClCompile Include="MessageData\ByteContainerTest.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\PixelIndicesTest.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -2,12 +2,9 @@
 #define IMESSAGE_WRITER_H_
 
 #include "IUncopyable.h"
-#include "MessageData/BitContainer.h"
 
 namespace arecibo_message {
 namespace message_writer {
-
-using MessageBits = message_data::BitContainer;
 
 /// <summary>
 /// メッセージ出力インターフェイス

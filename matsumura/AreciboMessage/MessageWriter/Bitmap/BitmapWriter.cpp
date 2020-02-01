@@ -15,8 +15,8 @@ namespace bitmap {
 // ========================================================================================
 // Constructor
 // ========================================================================================
-BitmapWriter::BitmapWriter(const message_data::BitContainer& bytes)
-	: MessageWriterBase<Color>(bytes, [](bool bit) { return bit ? Color::White() : Color::Black(); }) {
+BitmapWriter::BitmapWriter(const BitContainer& messageBits)
+	: MessageWriterBase(messageBits, [](bool bit) { return bit ? Color::White() : Color::Black(); }) {
 	// 設定情報から拡大率を取得する
 	auto& settings = utility::Settings::Instance();
 	scale = settings.GetIntValue(TEXT("Bitmap"), TEXT("Scale"));
