@@ -35,8 +35,8 @@ AreciboMessage::~AreciboMessage() {}
 void AreciboMessage::Output() const {
 	// MessageWriterのインスタンスを生成して、書き出し先にメッセージを出力する
 	using Factory = message_writer::MessageWriterFactory;
-	auto& writer = Factory::Instance().CreateWriter(*pBitContainer);
-	writer.Write();
+	auto pWriter = Factory::Instance().CreateWriter(*pBitContainer);
+	pWriter->Write();
 }
 
 } // namespace arecibo_message 

@@ -22,7 +22,7 @@ enum class Target {
 // ========================================================================================
 // Public Methods
 // ========================================================================================
-IMessageWriter& MessageWriterFactory::CreateWriter(const MessageBits& message) {
+UniquePtr<IMessageWriter> MessageWriterFactory::CreateWriter(const MessageBits& message) {
 	// ファイルの書き出し先を設定情報から取得する
 	auto& settings = utility::Settings::Instance();
 	auto targetInt = settings.GetIntValue(TEXT("Target"), TEXT("Target"));
@@ -30,18 +30,14 @@ IMessageWriter& MessageWriterFactory::CreateWriter(const MessageBits& message) {
 
 	switch (target) {
 	case Target::CONSOLE:
-		pWriter = std::make_unique<console::ConsoleWriter>(message);
-		break;
+		return std::make_unique<console::ConsoleWriter>(message);
 
 	case Target::BITMAP:
-		pWriter = std::make_unique<bitmap::BitmapWriter>(message);
-		break;
+		return std::make_unique<bitmap::BitmapWriter>(message);
 
 	default:
 		throw std::invalid_argument("Invalid writer type!!");
 	}
-
-	return *pWriter;
 }
 
 } // namespace message_writer

@@ -17,14 +17,12 @@ public:
 	/// </summary>
 	/// <param name="message">32ビットのデータの集合</param>
 	/// <returns>MessageWriterのインスタンス</returns>
-	IMessageWriter& CreateWriter(const MessageBits& message);
+	UniquePtr<IMessageWriter> CreateWriter(const MessageBits& message);
 
 private:
 	friend utility::Singleton<MessageWriterFactory>;
 
 	MessageWriterFactory() {}
-
-	UniquePtr<IMessageWriter> pWriter;
 };
 
 } // namespace message_writer
