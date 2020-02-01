@@ -7,11 +7,11 @@ namespace message_data {
 
 TEST(ByteContainer_OpArraySubscript, CanGetEachByte) {
 	// Arrange
-	MessageSource source = { 0x12345678, 0x90123456 };
+	UInt32Collection source = { 0x12345678, 0x90123456 };
 	ByteContainer target(source);
 
 	// Act
-	U8s results;
+	UInt8Collection results;
 	Size loopCount = source.size() * sizeof(std::uint32_t);
 	for (Size i = 0; i < loopCount; i++) {
 		results.push_back(target[i]);

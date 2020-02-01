@@ -6,7 +6,7 @@ namespace message_data {
 // ========================================================================================
 // Constructor
 // ========================================================================================
-ByteContainer::ByteContainer(const MessageSource& source) {
+ByteContainer::ByteContainer(const UInt32Collection& source) {
 	// 32bitのデータ群を8bitのデータ群に変換して保存する
 	for (auto&& data : source) {
 		SaveAsUint8s(data);
@@ -16,14 +16,14 @@ ByteContainer::ByteContainer(const MessageSource& source) {
 // ========================================================================================
 // Private Methods
 // ========================================================================================
-void ByteContainer::SaveAsUint8s(BigEndian32 data) {
+void ByteContainer::SaveAsUint8s(UInt32 data) {
 	// 渡された32bitのデータから1バイトずつ取り出してbytesに追加する
-	for (Size index = 0; index < sizeof(data); index++) {
+	for (Index index = 0; index < sizeof(data); index++) {
 		bytes.push_back(GetByteData(data, index));
 	}
 }
 
-U8 ByteContainer::GetByteData(BigEndian32 data, Size index) const {
+UInt8 ByteContainer::GetByteData(UInt32 data, Index index) const {
 	// dataの上位indexバイト目のデータのみを抽出する
 	auto shiftAmount = (sizeof(data) - (index + 1)) * 8;
 	return (data >> shiftAmount) & 0x000000FF;

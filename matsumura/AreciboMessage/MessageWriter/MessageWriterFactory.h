@@ -1,8 +1,6 @@
 ﻿#ifndef MESSAGE_WRITER_FACTORY_H_
 #define MESSAGE_WRITER_FACTORY_H_
 
-#include <memory>
-
 #include "MessageWriter/IMessageWriter.h"
 #include "Utility/Singleton.h"
 
@@ -26,7 +24,7 @@ private:
 
 	MessageWriterFactory() {}
 
-	std::unique_ptr<IMessageWriter> pWriter;
+	UniquePtr<IMessageWriter> pWriter;
 };
 
 } // namespace message_writer

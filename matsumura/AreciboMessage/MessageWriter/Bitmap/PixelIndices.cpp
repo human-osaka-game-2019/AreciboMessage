@@ -6,47 +6,49 @@ namespace arecibo_message {
 namespace message_writer {
 namespace bitmap {
 
+namespace {
+void Repeat(Size loopCount, std::function<void(Index)> func) {
+	for (Size i = 0; i < loopCount; i++) {
+		func(i);
+	}
+}
+} // namespace
+
 // ========================================================================================
 // Constructor
 // ========================================================================================
-PixelIndices::PixelIndices(Size cellRow, Size cellCol, Size scale) : scale(scale) {
+PixelIndices::PixelIndices(Index cellRow, Index cellCol, Size scale) : scale(scale) {
 	Create(cellRow, cellCol);
 }
 
 // ========================================================================================
 // Public Methods
 // ========================================================================================
-void PixelIndices::ApplyToAll(std::function<void(Size&)> func) {
+void PixelIndices::ApplyToAll(std::function<void(Index*)> func) {
 	for (auto& index : indices) {
-		func(index);
+		func(&index);
 	}
 }
 
 // ========================================================================================
 // Private Methods
 // ========================================================================================
-void PixelIndices::Create(Size cellRow, Size cellCol) {
+void PixelIndices::Create(Index cellRow, Index cellCol) {
 	// Bitmapは左下が(0, 0)なので、行番号は上下反転する
-	Size invertedRow = MESSAGE_HEIGHT - (cellRow + 1);
+	auto invertedRow = MESSAGE_HEIGHT - (cellRow + 1);
 
 	// 以下のpixelを開始位置とし、対象となるpixelを算出する
-	Size startRow = invertedRow * scale;
-	Size startCol = cellCol * scale;
+	auto startRow = invertedRow * scale;
+	auto startCol = cellCol * scale;
 
-	RepaetScaleTimes([=](Size i) { AddIndices(startRow + i, startCol); });
+	Repeat(scale, [=](auto i) { AddIndices(startRow + i, startCol); });
 }
 
-void PixelIndices::AddIndices(Size pixelRow, Size startCol) {
-	Size pixelWidth = MESSAGE_WIDTH * scale;
-	Size startIndex = pixelRow * pixelWidth + startCol;
+void PixelIndices::AddIndices(Index pixelRow, Index startCol) {
+	auto pixelWidth = MESSAGE_WIDTH * scale;
+	auto startIndex = pixelRow * pixelWidth + startCol;
 
-	RepaetScaleTimes([=](Size i) { indices.push_back(startIndex + i); });
-}
-
-void PixelIndices::RepaetScaleTimes(std::function<void(Size)> func) const {
-	for (Size i = 0; i < scale; i++) {
-		func(i);
-	}
+	Repeat(scale, [=](auto i) { indices.push_back(startIndex + i); });
 }
 
 } // namespace bitmap

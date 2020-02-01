@@ -15,20 +15,20 @@ public:
 	/// コンストラクタ
 	/// </summary>
 	/// <param name="source">32ビットのデータの集合</param>
-	explicit ByteContainer(const MessageSource& source);
+	explicit ByteContainer(const UInt32Collection& source);
 
 	/// <summary>
 	/// 添字演算子
 	/// </summary>
 	/// <param name="index">先頭からのバイト数</param>
 	/// <returns>指定された位置のデータ</returns>
-	const U8& operator[](Size index) const { return bytes[index]; }
+	const UInt8& operator[](Index index) const { return bytes[index]; }
 
 private:
-	U8s bytes;
+	UInt8Collection bytes;
 
-	void SaveAsUint8s(BigEndian32 data);
-	U8 GetByteData(BigEndian32 data, Size index) const;
+	void SaveAsUint8s(UInt32 data);
+	UInt8 GetByteData(UInt32 data, Index index) const;
 };
 
 } // namespace message_data

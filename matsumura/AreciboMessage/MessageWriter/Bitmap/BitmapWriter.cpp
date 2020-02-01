@@ -27,12 +27,12 @@ BitmapWriter::BitmapWriter(const message_data::BitContainer& bytes)
 // ========================================================================================
 // Overridden Protected Methods
 // ========================================================================================
-void BitmapWriter::WriteCell(Size row, Size col, OutputType value) {
+void BitmapWriter::WriteCell(Index row, Index col, OutputType value) {
 	// メッセージの行と列に対応するビットマップのピクセル番号を算出する
 	PixelIndices indices(row, col, scale);
 
 	// 算出した各ピクセルに色を設定
-	indices.ApplyToAll([=](Size& index) { (*pBitmap)[index] = value; });
+	indices.ApplyToAll([=](Index* pIndex) { (*pBitmap)[*pIndex] = value; });
 }
 
 void BitmapWriter::Finalize() {

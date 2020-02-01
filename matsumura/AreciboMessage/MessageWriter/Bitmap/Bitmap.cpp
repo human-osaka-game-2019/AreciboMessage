@@ -57,7 +57,7 @@ void Bitmap::CreateInfoHeader(Size width, Size height) {
 	infoHeader.biBitCount = 24;
 }
 
-void Bitmap::WriteLine(std::ostream& stream, Size row) const {
+void Bitmap::WriteLine(std::ostream& stream, Index row) const {
 	auto startIndex = row * infoHeader.biWidth;
 
 	// 1行ぶんのRGB値を出力

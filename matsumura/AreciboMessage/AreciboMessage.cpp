@@ -1,7 +1,5 @@
 ﻿#include "AreciboMessage.h"
 
-#include <memory>
-
 #include <tchar.h>
 #include "MessageData/BitContainer.h"
 #include "MessageWriter/MessageWriterFactory.h"
@@ -10,13 +8,13 @@ namespace arecibo_message {
 using message_data::BitContainer;
 
 namespace {
-std::unique_ptr<BitContainer> pBitContainer;
+UniquePtr<BitContainer> pBitContainer;
 }
 
 // ========================================================================================
 // Constructor
 // ========================================================================================
-AreciboMessage::AreciboMessage(const MessageSource& message) {
+AreciboMessage::AreciboMessage(const UInt32Collection& message) {
 #if _DEBUG
 	// メモリリーク検知開始
 	utility::StartDetectingMemoryLeaks();

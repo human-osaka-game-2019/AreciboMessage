@@ -1,9 +1,7 @@
 ﻿#ifndef BITMAP_H_
 #define BITMAP_H_
 
-#include <memory>
 #include <ostream>
-#include <vector>
 
 #include <Windows.h>
 #include "IUncopyable.h"
@@ -33,7 +31,7 @@ public:
 	/// <param name="index">何ピクセル目か</param>
 	/// <returns>指定されたピクセルのRGB値</returns>
 	/// <remarks>BMPファイルのフォーマット同様、画像の左下のピクセルを先頭(0)として扱う</remarks>
-	Color& operator[](Size index) { return bitmapData[index]; }
+	Color& operator[](Index index) { return bitmapData[index]; }
 
 	/// <summary>
 	/// ビットマップファイル形式で書き出す
@@ -44,13 +42,13 @@ public:
 private:
 	BITMAPFILEHEADER fileHeader;
 	BITMAPINFOHEADER infoHeader;
-	std::vector<Color> bitmapData;
-	std::unique_ptr<Paddings> pPaddings;
+	Vector<Color> bitmapData;
+	UniquePtr<Paddings> pPaddings;
 
 	void CreateFileHeader(Size width, Size height);
 	Size CalcBytesPerLine(Size width);
 	void CreateInfoHeader(Size width, Size height);
-	void WriteLine(std::ostream& file, Size row) const;
+	void WriteLine(std::ostream& file, Index row) const;
 };
 
 } // namespace bitmap

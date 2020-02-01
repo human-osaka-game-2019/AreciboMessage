@@ -1,8 +1,6 @@
 ﻿#ifndef BITMAP_WRITER_H_
 #define BITMAP_WRITER_H_
 
-#include <memory>
-
 #include "MessageWriter/Bitmap/Bitmap.h"
 #include "MessageWriter/MessageWriterBase.h"
 
@@ -27,13 +25,13 @@ protected:
 	/// <summary>
 	/// アレシボメッセージの1マスを書き出す
 	/// </summary>
-	/// <param name="row">行(0～72)</param>
-	/// <param name="col">列(0～22)</param>
+	/// <param name="row">行番号(0～72)</param>
+	/// <param name="col">列番号(0～22)</param>
 	/// <param name="value">そのセルの値</param>
 	/// <remarks>
 	/// メッセージの行・列と拡大率から、対象となるビットマップのピクセルを算出し色を設定する
 	/// </remarks>
-	void WriteCell(Size row, Size col, OutputType value) override;
+	void WriteCell(Index row, Index col, OutputType value) override;
 
 	/// <summary>
 	/// 仕上げ処理
@@ -42,7 +40,7 @@ protected:
 	void Finalize() override;
 
 private:
-	std::unique_ptr<Bitmap> pBitmap;
+	UniquePtr<Bitmap> pBitmap;
 	Size scale;
 };
 

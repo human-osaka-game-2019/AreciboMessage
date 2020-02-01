@@ -16,19 +16,19 @@ public:
 	/// コンストラクタ
 	/// </summary>
 	/// <param name="message">32ビットのデータの集合</param>
-	explicit BitContainer(const MessageSource& message) : message(message) {}
+	explicit BitContainer(const UInt32Collection& message) : message(message) {}
 
 	/// <summary>
 	/// 添字演算子
 	/// </summary>
 	/// <param name="offset">先頭からのビット数</param>
 	/// <returns>指定されたビットが立っていればtrue</returns>
-	bool operator[](Size offset) const {
+	bool operator[](Index offset) const {
 		// 指定されたビットが格納されているバイトデータを取り出す
-		U8 byteData = message[offset / 8];
+		UInt8 byteData = message[offset / 8];
 
 		// 指定されたビットはbyteDataバイト目の先頭から何ビット目か
-		Size bitIndex = offset % 8;
+		Index bitIndex = offset % 8;
 
 		// 目的のビットが立っているかを返す
 		return byteData & (0x80 >> bitIndex);

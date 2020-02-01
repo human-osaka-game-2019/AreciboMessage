@@ -28,10 +28,10 @@ protected:
 	/// <summary>
 	/// アレシボメッセージの1マスをコンソールに書き出す
 	/// </summary>
-	/// <param name="row">行(0～72)</param>
-	/// <param name="col">列(0～22)</param>
+	/// <param name="row">行番号(0～72)</param>
+	/// <param name="col">列番号(0～22)</param>
 	/// <param name="value">そのセルの値</param>
-	void WriteCell(Size row, Size col, OutputType value) override {
+	void WriteCell(Index row, Index col, OutputType value) override {
 		std::cout << value;
 	}
 

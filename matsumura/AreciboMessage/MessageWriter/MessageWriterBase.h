@@ -31,7 +31,7 @@ public:
 	/// </summary>
 	void Write() override {
 		// Template Methodパターン
-		for (Size row = 0; row < MESSAGE_HEIGHT; row++) {
+		for (Index row = 0; row < MESSAGE_HEIGHT; row++) {
 			// 1行書き出す
 			WriteLine(row);
 
@@ -47,11 +47,11 @@ protected:
 	/// <summary>
 	/// アレシボメッセージの1マスを書き出す
 	/// </summary>
-	/// <param name="row">行(0～72)</param>
-	/// <param name="col">列(0～22)</param>
+	/// <param name="row">行番号(0～72)</param>
+	/// <param name="col">列番号(0～22)</param>
 	/// <param name="value">そのセルの値</param>
 	/// <remarks>メッセージデータの左上を(0, 0)として扱う</remarks>
-	virtual void WriteCell(Size row, Size col, OutputType value) = 0;
+	virtual void WriteCell(Index row, Index col, OutputType value) = 0;
 
 	/// <summary>
 	/// 次の行に移動する
@@ -67,9 +67,10 @@ private:
 	const MessageBits& message;
 	ValueGenerator outputValue;
 
-	void WriteLine(Size row) {
-		for (Size col = 0; col < MESSAGE_WIDTH; col++) {
-			bool bit = message[row * MESSAGE_WIDTH + col];
+	void WriteLine(Index row) {
+		auto startIndex = row * MESSAGE_WIDTH;
+		for (Index col = 0; col < MESSAGE_WIDTH; col++) {
+			bool bit = message[startIndex + col];
 			WriteCell(row, col, outputValue(bit));
 		}
 	}
