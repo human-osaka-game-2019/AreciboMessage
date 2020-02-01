@@ -9,6 +9,16 @@
 namespace arecibo_message {
 namespace message_writer {
 
+namespace {
+/// <summary>
+/// メッセージの出力先
+/// </summary>
+enum class Target {
+	CONSOLE,
+	BITMAP,
+};
+} // namespace
+
 // ========================================================================================
 // Public Methods
 // ========================================================================================
