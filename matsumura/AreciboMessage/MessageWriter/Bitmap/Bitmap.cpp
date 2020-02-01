@@ -4,6 +4,14 @@ namespace arecibo_message {
 namespace message_writer {
 namespace bitmap {
 
+namespace {
+void AddColorData(UInt8Collection* pData, const Color::RGB& rgb) {
+	for (auto&& i : rgb) {
+		pData->push_back(i);
+	}
+}
+} // namespace
+
 // ========================================================================================
 // Constructor
 // ========================================================================================
@@ -15,32 +23,30 @@ Bitmap::Bitmap(Size width, Size height) : header(width, height) {
 // ========================================================================================
 // Public Methods
 // ========================================================================================
-void Bitmap::Write(std::ostream& stream) const {
-	UInt8Collection headerData;
-	header.GetData(&headerData);
-	for (auto& i : headerData) {
-		stream << i;
-	}
+void Bitmap::GetData(UInt8Collection* pData) const {
+	pData->reserve(header.GetFileSize());
+
+	header.GetData(pData);
 
 	for (int row = 0; row < header.Height(); row++) {
-		WriteLine(stream, row);
+		auto startIndex = row * header.Width();
+		GetLineData(startIndex, pData);
 	}
 }
 
 // ========================================================================================
 // Private Methods
 // ========================================================================================
-void Bitmap::WriteLine(std::ostream& stream, Index row) const {
-	auto startIndex = row * header.Width();
-
-	// 1行ぶんのRGB値を出力
-	for (int col = 0; col < header.Width(); col++) {
-		bitmapData[startIndex + col].Write(stream);
+void Bitmap::GetLineData(Index startIndex, UInt8Collection* pData) const {
+	// 渡されたコレクションに、1行ぶんのRGB値を詰める
+	for (Size col = 0; col < header.Width(); col++) {
+		auto& rgb = bitmapData[startIndex + col].GetRGB();
+		AddColorData(pData, rgb);
 	}
 
 	// 1行のデータサイズが4の倍数になるようパディング
 	for (Size i = 0; i < header.PaddingSize(); i++) {
-		stream << UInt8(0);
+		pData->push_back(UInt8(0));
 	}
 }
 

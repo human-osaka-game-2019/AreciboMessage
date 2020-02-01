@@ -25,24 +25,23 @@ public:
 	Bitmap(Size width, Size height);
 
 	/// <summary>
-	/// 添字演算子
+	/// ピクセルの色情報を設定する
 	/// </summary>
 	/// <param name="index">何ピクセル目か</param>
-	/// <returns>指定されたピクセルのRGB値</returns>
-	/// <remarks>BMPファイルのフォーマット同様、画像の左下のピクセルを先頭(0)として扱う</remarks>
-	Color& operator[](Index index) { return bitmapData[index]; }
+	/// <param name="color">色情報</param>
+	void SetColor(Index index, Color color) { bitmapData[index] = color; }
 
 	/// <summary>
-	/// ビットマップファイル形式で書き出す
+	/// ビットマップファイルのデータを取得する
 	/// </summary>
-	/// <param name="stream">出力用ストリーム</param>
-	void Write(std::ostream& stream) const;
+	/// <param name="pData">データの格納先</param>
+	void GetData(UInt8Collection* pData) const;
 
 private:
 	Vector<Color> bitmapData;
 	BitmapHeader header;
 
-	void WriteLine(std::ostream& file, Index row) const;
+	void GetLineData(Index startIndex, UInt8Collection* pData) const;
 };
 
 } // namespace bitmap

@@ -32,13 +32,20 @@ void BitmapWriter::WriteCell(Index row, Index col, OutputType value) {
 	PixelIndices indices(row, col, scale);
 
 	// 算出した各ピクセルに色を設定
-	indices.ApplyToAll([=](Index* pIndex) { (*pBitmap)[*pIndex] = value; });
+	indices.ApplyToAll([=](Index* pIndex) { pBitmap->SetColor(*pIndex, value); });
 }
 
 void BitmapWriter::Finalize() {
-	// ファイルに書き出す
+	// ビットマップファイルのバイナリデータをUInt8のコレクションとして取得する
+	UInt8Collection data;
+	pBitmap->GetData(&data);
+
+	// 1バイトずつファイルに書き出す
 	std::ofstream stream("AreciboMessage.bmp", std::ios::binary);
-	pBitmap->Write(stream);
+	for (auto&& byte : data) {
+		stream << byte;
+	}
+
 	stream.close();
 
 	// 書き出したビットマップファイルを既定のアプリで開く

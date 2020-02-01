@@ -1,9 +1,7 @@
 ﻿#ifndef COLOR_H_
 #define COLOR_H_
 
-#include <ostream>
-
-#include <Windows.h>
+#include <array>
 
 namespace arecibo_message {
 namespace message_writer {
@@ -15,25 +13,21 @@ namespace bitmap {
 /// <remarks>現状、黒と白しか指定できない</remarks>
 struct Color {
 public:
-	static Color Black() { return Color(0x00, 0x00, 0x00); }
-	static Color White() { return Color(0xFF, 0xFF, 0xFF); }
+	using RGB = std::array<UInt8, 3>;
+
+	static constexpr Color Black() { return Color(0x00, 0x00, 0x00); }
+	static constexpr Color White() { return Color(0xFF, 0xFF, 0xFF); }
 
 	/// <summary>
-	/// RGB値を書き出す
+	/// RGB値を取得する
 	/// </summary>
-	/// <param name="stream">出力ストリーム</param>
-	void Write(std::ostream& stream) const {
-		stream << red;
-		stream << green;
-		stream << blue;
-	}
-
-	BYTE red;
-	BYTE green;
-	BYTE blue;
+	/// <returns>RGB値</returns>
+	const RGB& GetRGB() const { return rgb; }
 
 private:
-	Color(BYTE red, BYTE green, BYTE blue) : red(red), green(green), blue(blue) {}
+	constexpr Color(UInt8 red, UInt8 green, UInt8 blue) : rgb({ red, green, blue }) {}
+
+	RGB rgb;
 };
 
 } // namespace bitmap
