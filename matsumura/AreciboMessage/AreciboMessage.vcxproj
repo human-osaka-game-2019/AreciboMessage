@@ -145,8 +145,8 @@
     <ClCompile Include="AreciboMessage.cpp" />
     <ClCompile Include="MessageData\ByteContainer.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\Bitmap.cpp" />
+    <ClCompile Include="MessageWriter\Bitmap\BitmapHeader.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\BitmapWriter.cpp" />
-    <ClCompile Include="MessageWriter\Bitmap\Paddings.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\PixelIndices.cpp" />
     <ClCompile Include="MessageWriter\MessageWriterFactory.cpp" />
     <ClCompile Include="Utility\Settings.cpp" />
@@ -157,9 +157,9 @@
     <ClInclude Include="MessageData\BitContainer.h" />
     <ClInclude Include="MessageData\ByteContainer.h" />
     <ClInclude Include="MessageWriter\Bitmap\Bitmap.h" />
+    <ClInclude Include="MessageWriter\Bitmap\BitmapHeader.h" />
     <ClInclude Include="MessageWriter\Bitmap\BitmapWriter.h" />
     <ClInclude Include="MessageWriter\Bitmap\Color.h" />
-    <ClInclude Include="MessageWriter\Bitmap\Paddings.h" />
     <ClInclude Include="MessageWriter\Bitmap\PixelIndices.h" />
     <ClInclude Include="MessageWriter\Console\ConsoleWriter.h" />
     <ClInclude Include="MessageWriter\Constants.h" />

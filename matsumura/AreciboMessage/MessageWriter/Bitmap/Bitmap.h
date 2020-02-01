@@ -3,10 +3,9 @@
 
 #include <ostream>
 
-#include <Windows.h>
 #include "IUncopyable.h"
+#include "MessageWriter/Bitmap/BitmapHeader.h"
 #include "MessageWriter/Bitmap/Color.h"
-#include "MessageWriter/Bitmap/Paddings.h"
 
 namespace arecibo_message {
 namespace message_writer {
@@ -40,14 +39,9 @@ public:
 	void Write(std::ostream& stream) const;
 
 private:
-	BITMAPFILEHEADER fileHeader;
-	BITMAPINFOHEADER infoHeader;
 	Vector<Color> bitmapData;
-	UniquePtr<Paddings> pPaddings;
+	BitmapHeader header;
 
-	void CreateFileHeader(Size width, Size height);
-	Size CalcBytesPerLine(Size width);
-	void CreateInfoHeader(Size width, Size height);
 	void WriteLine(std::ostream& file, Index row) const;
 };
 

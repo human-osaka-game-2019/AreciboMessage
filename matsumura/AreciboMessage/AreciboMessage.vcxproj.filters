@@ -41,7 +41,7 @@
     <ClCompile Include="MessageData\ByteContainer.cpp">
       <Filter>MessageData</Filter>
     </ClCompile>
-    <ClCompile Include="MessageWriter\Bitmap\Paddings.cpp">
+    <ClCompile Include="MessageWriter\Bitmap\BitmapHeader.cpp">
       <Filter>MessageWriter\Bitmap</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,10 +88,10 @@
       <Filter>MessageData</Filter>
     </ClInclude>
     <ClInclude Include="TypeAliases.h" />
-    <ClInclude Include="MessageWriter\Bitmap\Paddings.h">
+    <ClInclude Include="MessageWriter\Bitmap\Color.h">
       <Filter>MessageWriter\Bitmap</Filter>
     </ClInclude>
-    <ClInclude Include="MessageWriter\Bitmap\Color.h">
+    <ClInclude Include="MessageWriter\Bitmap\BitmapHeader.h">
       <Filter>MessageWriter\Bitmap</Filter>
     </ClInclude>
   </ItemGroup>
