@@ -25,7 +25,7 @@ PixelIndices::PixelIndices(Index cellRow, Index cellCol, Size scale) : scale(sca
 // Public Methods
 // ========================================================================================
 void PixelIndices::ApplyToAll(std::function<void(Index*)> func) {
-	for (auto& index : indices) {
+	for (auto&& index : indices) {
 		func(&index);
 	}
 }
