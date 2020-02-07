@@ -25,7 +25,7 @@ public:
 	/// <param name="messageBits">メッセージデータ</param>
 	/// <param name="valueGenerator">出力する値を生成する関数オブジェクト</param>
 	MessageWriterBase(const BitContainer& messageBits, ValueGenerator valueGenerator)
-		: messageBits(messageBits), outputValue(valueGenerator) {}
+		: messageBits(messageBits), valueGenerator(valueGenerator) {}
 
 	/// <summary>
 	/// メッセージを書き出す
@@ -66,13 +66,13 @@ protected:
 
 private:
 	const BitContainer& messageBits;
-	ValueGenerator outputValue;
+	ValueGenerator valueGenerator;
 
 	void WriteLine(Index row) {
 		auto startIndex = row * MESSAGE_WIDTH;
 		for (Index col = 0; col < MESSAGE_WIDTH; col++) {
 			bool bit = messageBits[startIndex + col];
-			WriteCell(row, col, outputValue(bit));
+			WriteCell(row, col, valueGenerator(bit));
 		}
 	}
 };
