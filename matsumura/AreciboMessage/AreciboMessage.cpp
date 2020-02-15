@@ -19,10 +19,8 @@ UniquePtr<BitContainer> pMessageBits;
 // Constructor
 // ========================================================================================
 AreciboMessage::AreciboMessage(const UInt32Collection& message) {
-#if _DEBUG
 	// メモリリーク検知開始
 	utility::StartDetectingMemoryLeaks();
-#endif
 
 	// 32ビットのデータ列を8ビットのデータ列に変換して保持しておく
 	pMessageBits = std::make_unique<BitContainer>(message);
