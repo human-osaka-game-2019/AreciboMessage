@@ -10,7 +10,7 @@ BitContainer::BitContainer(const UInt32Collection& message) {
 	messageBits.reserve(message.size());
 
 	for (auto&& uint32Data : message) {
-		messageBits.emplace_back(uint32Data);
+		messageBits.push_back(uint32Data);
 	}
 }
 
