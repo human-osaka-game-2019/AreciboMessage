@@ -6,6 +6,9 @@ namespace arecibo_message {
 namespace message_writer {
 namespace bitmap {
 
+// ========================================================================================
+// Unnamed Namespace
+// ========================================================================================
 namespace {
 void Repeat(Size loopCount, std::function<void(Index)> func) {
 	for (Size i = 0; i < loopCount; i++) {

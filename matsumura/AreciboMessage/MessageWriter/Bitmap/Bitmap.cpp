@@ -4,6 +4,9 @@ namespace arecibo_message {
 namespace message_writer {
 namespace bitmap {
 
+// ========================================================================================
+// Unnamed Namespace
+// ========================================================================================
 namespace {
 void AddColorData(UInt8Collection* pData, const Color::RGB& rgb) {
 	for (auto&& i : rgb) {

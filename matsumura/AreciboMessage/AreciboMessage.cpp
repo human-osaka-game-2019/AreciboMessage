@@ -8,9 +8,12 @@ namespace arecibo_message {
 
 using BitContainer = message_data::BitContainer;
 
+// ========================================================================================
+// Unnamed Namespace
+// ========================================================================================
 namespace {
 UniquePtr<BitContainer> pMessageBits;
-}
+} // namespace
 
 // ========================================================================================
 // Constructor
