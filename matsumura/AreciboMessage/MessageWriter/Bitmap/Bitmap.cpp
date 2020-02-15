@@ -18,10 +18,8 @@ void AddColorData(UInt8Collection* pData, const Color::RGB& rgb) {
 // ========================================================================================
 // Constructor
 // ========================================================================================
-Bitmap::Bitmap(Size width, Size height) : header(width, height) {
-	auto pixelCount = width * height;
-	bitmapData.resize(pixelCount, Color::Black());
-}
+Bitmap::Bitmap(Size width, Size height)
+	: header(width, height), bitmapData(width * height, Color::Black()) {}
 
 // ========================================================================================
 // Public Methods
