@@ -20,7 +20,7 @@ public:
 	/// RGB値を取得する
 	/// </summary>
 	/// <returns>RGB値</returns>
-	const RGB& GetRGB() const { return rgb; }
+	const RGB& Value() const { return rgb; }
 
 private:
 	constexpr Color(UInt8 red, UInt8 green, UInt8 blue) : rgb({ red, green, blue }) {}

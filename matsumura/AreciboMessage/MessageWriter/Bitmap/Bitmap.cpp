@@ -8,10 +8,9 @@ namespace bitmap {
 // Unnamed Namespace
 // ========================================================================================
 namespace {
-void AddColorData(UInt8Vector* pData, const Color::RGB& rgb) {
-	for (auto&& i : rgb) {
-		pData->push_back(i);
-	}
+template<class T>
+void Concatenate(UInt8Vector* first, const T& second) {
+	first->insert(first->end(), second.begin(), second.end());
 }
 } // namespace
 
@@ -27,10 +26,11 @@ Bitmap::Bitmap(Size width, Size height)
 void Bitmap::GetData(UInt8Vector* pData) const {
 	pData->reserve(header.FileSize());
 
-	auto pHeaderData = header.GetData();
-	pData->insert(pData->end(), pHeaderData->begin(), pHeaderData->end());
+	// ビットマップヘッダのデータを格納
+	Concatenate(pData, *header.GetData());
 
-	for (int row = 0; row < header.Height(); row++) {
+	// 各行のデータを格納
+	for (Index row = 0; row < header.Height(); row++) {
 		auto startIndex = row * header.Width();
 		GetLineData(startIndex, pData);
 	}
@@ -41,9 +41,9 @@ void Bitmap::GetData(UInt8Vector* pData) const {
 // ========================================================================================
 void Bitmap::GetLineData(Index startIndex, UInt8Vector* pData) const {
 	// 渡されたコレクションに、1行ぶんのRGB値を詰める
-	for (Size col = 0; col < header.Width(); col++) {
-		auto& rgb = bitmapData[startIndex + col].GetRGB();
-		AddColorData(pData, rgb);
+	for (Index col = 0; col < header.Width(); col++) {
+		auto& rgb = bitmapData[startIndex + col].Value();
+		Concatenate(pData, rgb);
 	}
 
 	// 1行のデータサイズが4の倍数になるようパディング
