@@ -11,6 +11,10 @@ namespace bitmap {
 /// ビットマップヘッダークラス
 /// </summary>
 class BitmapHeader {
+private:
+	static const Size FILE_HEADER_SIZE = sizeof(BITMAPFILEHEADER);
+	static const Size INFO_HEADER_SIZE = sizeof(BITMAPINFOHEADER);
+
 public:
 	/// <summary>
 	/// コンストラクタ

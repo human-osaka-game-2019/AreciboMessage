@@ -17,12 +17,12 @@ BitmapHeader::BitmapHeader(Size width, Size height) {
 // ========================================================================================
 void BitmapHeader::GetData(UInt8Collection* pData) const {
 	auto pFileHeader = reinterpret_cast<const char*>(&fileHeader);
-	for (Size i = 0; i < sizeof(BITMAPFILEHEADER); i++) {
+	for (Index i = 0; i < FILE_HEADER_SIZE; i++) {
 		pData->push_back(*(pFileHeader++));
 	}
 
 	auto pInfoHeader = reinterpret_cast<const char*>(&infoHeader);
-	for (Size i = 0; i < sizeof(BITMAPINFOHEADER); i++) {
+	for (Index i = 0; i < INFO_HEADER_SIZE; i++) {
 		pData->push_back(*(pInfoHeader++));
 	}
 }
@@ -33,7 +33,7 @@ void BitmapHeader::GetData(UInt8Collection* pData) const {
 void BitmapHeader::CreateFileHeader(Size width, Size height) {
 	fileHeader.bfType = 'B' | ('M' << 8);
 
-	auto headerSize = sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER);
+	auto headerSize = FILE_HEADER_SIZE + INFO_HEADER_SIZE;
 	fileHeader.bfOffBits = static_cast<DWORD>(headerSize);
 
 	auto dataSize = CalcBytesPerLine(width) * height;
