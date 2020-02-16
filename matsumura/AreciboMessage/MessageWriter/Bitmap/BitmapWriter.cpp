@@ -37,12 +37,11 @@ void BitmapWriter::WriteCell(Index row, Index col, OutputType value) {
 
 void BitmapWriter::Finalize() {
 	// ビットマップファイルのバイナリデータをUInt8のコレクションとして取得する
-	UInt8Vector data;
-	pBitmap->GetData(&data);
+	auto pData = pBitmap->GetData();
 
 	// 1バイトずつファイルに書き出す
 	std::ofstream stream("AreciboMessage.bmp", std::ios::binary);
-	for (auto&& byte : data) {
+	for (auto&& byte : *pData) {
 		stream << byte;
 	}
 

@@ -41,8 +41,8 @@ Bitmap::Bitmap(Size width, Size height)
 // ========================================================================================
 // Public Methods
 // ========================================================================================
-void Bitmap::GetData(UInt8Vector* pData) const {
-	pData->reserve(header.FileSize());
+UInt8VectorPtr Bitmap::GetData() const {
+	auto pData = CreateDataBuffer(header.FileSize());
 
 	// ビットマップヘッダのデータを格納
 	Concatenate(pData, header.GetData());
@@ -52,6 +52,8 @@ void Bitmap::GetData(UInt8Vector* pData) const {
 		auto startIndex = row * header.Width();
 		Concatenate(pData, GetLineData(startIndex));
 	}
+
+	return pData;
 }
 
 // ========================================================================================

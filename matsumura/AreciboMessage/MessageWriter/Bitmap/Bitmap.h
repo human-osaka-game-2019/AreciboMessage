@@ -34,8 +34,8 @@ public:
 	/// <summary>
 	/// ビットマップファイルのデータを取得する
 	/// </summary>
-	/// <param name="pData">データの格納先</param>
-	void GetData(UInt8Vector* pData) const;
+	/// <returns>ビットマップファイルのデータ</returns>
+	UInt8VectorPtr GetData() const;
 
 private:
 	Vector<Color> bitmapData;
