@@ -8,6 +8,12 @@ namespace bitmap {
 // Unnamed Namespace
 // ========================================================================================
 namespace {
+UInt8VectorPtr EmptyData(Size size) {
+	auto pContainer = std::make_unique<UInt8Vector>(size, UInt8(0));
+
+	return pContainer;
+}
+
 template<class T>
 void Concatenate(UInt8Vector* first, const T& second) {
 	first->insert(first->end(), second.begin(), second.end());
@@ -47,9 +53,8 @@ void Bitmap::GetLineData(Index startIndex, UInt8Vector* pData) const {
 	}
 
 	// 1行のデータサイズが4の倍数になるようパディング
-	for (Size i = 0; i < header.PaddingSize(); i++) {
-		pData->push_back(UInt8(0));
-	}
+	auto pPaddings = EmptyData(header.PaddingSize());
+	Concatenate(pData, *pPaddings);
 }
 
 } // namespace bitmap
