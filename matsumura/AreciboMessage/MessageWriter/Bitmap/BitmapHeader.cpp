@@ -53,14 +53,15 @@ void BitmapHeader::CalcBytesPerLine(Size width) {
 }
 
 Size BitmapHeader::CalcPaddingSize(Size sizeWithoutPaddings) {
-	// まず端数を求める
-	auto remainder = sizeWithoutPaddings % 4;
-
-	if (remainder == 0) return 0;
-
 	// 4の倍数になるようパディングする
-	// サイズは4から端数を引いた数
-	return 4 - remainder;
+	constexpr Size alignment = 4;
+
+	// まず端数を求める
+	auto remainder = sizeWithoutPaddings % alignment;
+
+	// サイズは4から端数を引いた数だが、パディング不要の場合(remainder = 0)にも
+	// 対応するため、さらに4で割って余りを計算する
+	return (4 - remainder) % alignment;
 }
 
 void BitmapHeader::CreateInfoHeader(Size width, Size height) {
