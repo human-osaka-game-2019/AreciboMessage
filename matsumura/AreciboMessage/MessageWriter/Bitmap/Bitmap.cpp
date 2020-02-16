@@ -25,7 +25,7 @@ Bitmap::Bitmap(Size width, Size height)
 // Public Methods
 // ========================================================================================
 void Bitmap::GetData(UInt8Collection* pData) const {
-	pData->reserve(header.GetFileSize());
+	pData->reserve(header.FileSize());
 
 	header.GetData(pData);
 

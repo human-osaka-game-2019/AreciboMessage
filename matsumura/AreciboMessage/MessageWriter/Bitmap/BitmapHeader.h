@@ -27,7 +27,7 @@ public:
 	/// ビットマップファイルのサイズを取得する
 	/// </summary>
 	/// <returns>ファイルサイズ</returns>
-	Size GetFileSize() const { return fileHeader.bfSize; }
+	Size FileSize() const { return fileHeader.bfSize; }
 
 	/// <summary>
 	/// ビットマップファイルのヘッダ部のデータを取得する
