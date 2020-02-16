@@ -28,7 +28,7 @@ public:
 
 private:
 	static constexpr Size UINT32_BIT_WIDTH = 32;
-	std::vector<std::bitset<UINT32_BIT_WIDTH>> messageBits;
+	Vector<std::bitset<UINT32_BIT_WIDTH>> messageBits;
 };
 
 } // namespace message_data
