@@ -8,7 +8,7 @@ namespace bitmap {
 // Unnamed Namespace
 // ========================================================================================
 namespace {
-void AddColorData(UInt8Collection* pData, const Color::RGB& rgb) {
+void AddColorData(UInt8Vector* pData, const Color::RGB& rgb) {
 	for (auto&& i : rgb) {
 		pData->push_back(i);
 	}
@@ -24,7 +24,7 @@ Bitmap::Bitmap(Size width, Size height)
 // ========================================================================================
 // Public Methods
 // ========================================================================================
-void Bitmap::GetData(UInt8Collection* pData) const {
+void Bitmap::GetData(UInt8Vector* pData) const {
 	pData->reserve(header.FileSize());
 
 	auto pHeaderData = header.GetData();
@@ -39,7 +39,7 @@ void Bitmap::GetData(UInt8Collection* pData) const {
 // ========================================================================================
 // Private Methods
 // ========================================================================================
-void Bitmap::GetLineData(Index startIndex, UInt8Collection* pData) const {
+void Bitmap::GetLineData(Index startIndex, UInt8Vector* pData) const {
 	// 渡されたコレクションに、1行ぶんのRGB値を詰める
 	for (Size col = 0; col < header.Width(); col++) {
 		auto& rgb = bitmapData[startIndex + col].GetRGB();

@@ -17,7 +17,7 @@ public:
 	/// コンストラクタ
 	/// </summary>
 	/// <param name="messageBits">32ビットのデータの集合</param>
-	explicit BitContainer(const UInt32Collection& message);
+	explicit BitContainer(const UInt32Vector& message);
 
 	/// <summary>
 	/// 添字演算子

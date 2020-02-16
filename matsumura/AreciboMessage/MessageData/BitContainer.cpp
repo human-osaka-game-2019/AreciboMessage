@@ -6,7 +6,7 @@ namespace message_data {
 // ========================================================================================
 // Constructor
 // ========================================================================================
-BitContainer::BitContainer(const UInt32Collection& message) {
+BitContainer::BitContainer(const UInt32Vector& message) {
 	messageBits.reserve(message.size());
 
 	for (auto&& uint32Data : message) {

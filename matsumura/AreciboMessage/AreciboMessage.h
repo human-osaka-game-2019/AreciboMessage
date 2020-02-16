@@ -15,7 +15,7 @@ public:
 	/// コンストラクタ
 	/// </summary>
 	/// <param name="message">32ビットのデータ列(ビッグエンディアン)</param>
-	explicit AreciboMessage(const UInt32Collection& message);
+	explicit AreciboMessage(const UInt32Vector& message);
 
 	~AreciboMessage();
 

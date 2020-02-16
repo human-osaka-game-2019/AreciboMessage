@@ -18,7 +18,7 @@ UniquePtr<BitContainer> pMessageBits;
 // ========================================================================================
 // Constructor
 // ========================================================================================
-AreciboMessage::AreciboMessage(const UInt32Collection& message) {
+AreciboMessage::AreciboMessage(const UInt32Vector& message) {
 	// メモリリーク検知開始
 	utility::StartDetectingMemoryLeaks();
 

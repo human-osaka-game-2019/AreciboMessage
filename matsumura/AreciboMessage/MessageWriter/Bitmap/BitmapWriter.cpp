@@ -37,7 +37,7 @@ void BitmapWriter::WriteCell(Index row, Index col, OutputType value) {
 
 void BitmapWriter::Finalize() {
 	// ビットマップファイルのバイナリデータをUInt8のコレクションとして取得する
-	UInt8Collection data;
+	UInt8Vector data;
 	pBitmap->GetData(&data);
 
 	// 1バイトずつファイルに書き出す

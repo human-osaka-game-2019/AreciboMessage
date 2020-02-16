@@ -35,13 +35,13 @@ public:
 	/// ビットマップファイルのデータを取得する
 	/// </summary>
 	/// <param name="pData">データの格納先</param>
-	void GetData(UInt8Collection* pData) const;
+	void GetData(UInt8Vector* pData) const;
 
 private:
 	Vector<Color> bitmapData;
 	BitmapHeader header;
 
-	void GetLineData(Index startIndex, UInt8Collection* pData) const;
+	void GetLineData(Index startIndex, UInt8Vector* pData) const;
 };
 
 } // namespace bitmap
