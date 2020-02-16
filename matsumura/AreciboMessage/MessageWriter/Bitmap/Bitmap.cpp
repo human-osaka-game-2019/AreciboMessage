@@ -8,6 +8,13 @@ namespace bitmap {
 // Unnamed Namespace
 // ========================================================================================
 namespace {
+UInt8VectorPtr CreateDataBuffer(Size capacity) {
+	auto pContainer = std::make_unique<UInt8Vector>();
+	pContainer->reserve(capacity);
+
+	return pContainer;
+}
+
 UInt8VectorPtr EmptyData(Size size) {
 	auto pContainer = std::make_unique<UInt8Vector>(size, UInt8(0));
 
