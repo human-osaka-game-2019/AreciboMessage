@@ -16,6 +16,8 @@ private:
 	static const Size INFO_HEADER_SIZE = sizeof(BITMAPINFOHEADER);
 
 public:
+	using HeaderData = UInt8Array<FILE_HEADER_SIZE + INFO_HEADER_SIZE>;
+
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
@@ -32,8 +34,8 @@ public:
 	/// <summary>
 	/// ビットマップファイルのヘッダ部のデータを取得する
 	/// </summary>
-	/// <param name="pData">データの格納先</param>
-	void GetData(UInt8Collection* pData) const;
+	/// <returns>ヘッダ部のデータ</returns>
+	UniquePtr<HeaderData> GetData() const;
 
 	/// <summary>
 	/// ビットマップファイルの幅を取得する

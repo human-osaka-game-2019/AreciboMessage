@@ -27,7 +27,8 @@ Bitmap::Bitmap(Size width, Size height)
 void Bitmap::GetData(UInt8Collection* pData) const {
 	pData->reserve(header.FileSize());
 
-	header.GetData(pData);
+	auto pHeaderData = header.GetData();
+	pData->insert(pData->end(), pHeaderData->begin(), pHeaderData->end());
 
 	for (int row = 0; row < header.Height(); row++) {
 		auto startIndex = row * header.Width();

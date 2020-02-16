@@ -15,16 +15,21 @@ BitmapHeader::BitmapHeader(Size width, Size height) {
 // ========================================================================================
 // Public Methods
 // ========================================================================================
-void BitmapHeader::GetData(UInt8Collection* pData) const {
-	auto pFileHeader = reinterpret_cast<const char*>(&fileHeader);
+UniquePtr<BitmapHeader::HeaderData> BitmapHeader::GetData() const {
+	auto pData = std::make_unique<HeaderData>();
+
+	Index index = 0;
+	auto pFileHeader = reinterpret_cast<const UInt8*>(&fileHeader);
 	for (Index i = 0; i < FILE_HEADER_SIZE; i++) {
-		pData->push_back(*(pFileHeader++));
+		(*pData)[index++] = pFileHeader[i];
 	}
 
 	auto pInfoHeader = reinterpret_cast<const char*>(&infoHeader);
 	for (Index i = 0; i < INFO_HEADER_SIZE; i++) {
-		pData->push_back(*(pInfoHeader++));
+		(*pData)[index++] = pInfoHeader[i];
 	}
+
+	return pData;
 }
 
 // ========================================================================================
