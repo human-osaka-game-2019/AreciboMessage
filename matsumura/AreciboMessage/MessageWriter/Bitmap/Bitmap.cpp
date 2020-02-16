@@ -50,23 +50,27 @@ void Bitmap::GetData(UInt8Vector* pData) const {
 	// 各行のデータを格納
 	for (Index row = 0; row < header.Height(); row++) {
 		auto startIndex = row * header.Width();
-		GetLineData(startIndex, pData);
+		auto pLineData = GetLineData(startIndex);
+		Concatenate(pData, *pLineData);
 	}
 }
 
 // ========================================================================================
 // Private Methods
 // ========================================================================================
-void Bitmap::GetLineData(Index startIndex, UInt8Vector* pData) const {
-	// 渡されたコレクションに、1行ぶんのRGB値を詰める
+UInt8VectorPtr Bitmap::GetLineData(Index startIndex) const {
+	auto pLineData = CreateDataBuffer(header.BytesPerLine());
+
+	// 1行ぶんのRGBデータを作成
 	for (Index col = 0; col < header.Width(); col++) {
 		auto& rgb = bitmapData[startIndex + col].Value();
-		Concatenate(pData, rgb);
+		Concatenate(pLineData, &rgb);
 	}
 
 	// 1行のデータサイズが4の倍数になるようパディング
-	auto pPaddings = EmptyData(header.PaddingSize());
-	Concatenate(pData, *pPaddings);
+	Concatenate(pLineData, EmptyData(header.PaddingSize()));
+
+	return pLineData;
 }
 
 } // namespace bitmap

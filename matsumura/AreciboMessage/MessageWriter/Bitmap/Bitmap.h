@@ -41,7 +41,7 @@ private:
 	Vector<Color> bitmapData;
 	BitmapHeader header;
 
-	void GetLineData(Index startIndex, UInt8Vector* pData) const;
+	UInt8VectorPtr GetLineData(Index startIndex) const;
 };
 
 } // namespace bitmap
