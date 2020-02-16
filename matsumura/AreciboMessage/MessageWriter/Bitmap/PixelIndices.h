@@ -1,8 +1,6 @@
 ﻿#ifndef PIXEL_INDICES_H_
 #define PIXEL_INDICES_H_
 
-#include <functional>
-
 #include "IUncopyable.h"
 
 namespace arecibo_message {
@@ -26,7 +24,7 @@ public:
 	/// 算出した全てのピクセルに処理を適用する
 	/// </summary>
 	/// <param name="func">適用する処理</param>
-	void ApplyToAll(std::function<void(Index*)> func);
+	void ApplyToAll(Function<void(Index*)> func);
 
 private:
 	Vector<Index> indices;

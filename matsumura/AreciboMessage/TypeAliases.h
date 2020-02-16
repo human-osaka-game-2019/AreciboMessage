@@ -4,6 +4,7 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
+#include <functional>
 #include <memory>
 #include <vector>
 
@@ -28,6 +29,9 @@ template<class T>
 using UniquePtr = std::unique_ptr<T>;
 
 using UInt8VectorPtr = UniquePtr<UInt8Vector>;
+
+template<class T>
+using Function = std::function<T>;
 
 } // namespace arecibo_message
 

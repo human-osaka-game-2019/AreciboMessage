@@ -1,8 +1,6 @@
 ﻿#ifndef MESSAGE_WRITER_BASE_H_
 #define MESSAGE_WRITER_BASE_H_
 
-#include <functional>
-
 #include "MessageData/BitContainer.h"
 #include "MessageWriter/Constants.h"
 #include "MessageWriter/IMessageWriter.h"
@@ -17,7 +15,7 @@ template <class OutputType>
 class MessageWriterBase : public IMessageWriter {
 public:
 	using BitContainer = message_data::BitContainer;
-	using ValueGenerator = std::function<OutputType(bool)>;
+	using ValueGenerator = Function<OutputType(bool)>;
 
 	/// <summary>
 	/// コンストラクタ

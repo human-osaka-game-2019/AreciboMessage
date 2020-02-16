@@ -10,7 +10,7 @@ namespace bitmap {
 // Unnamed Namespace
 // ========================================================================================
 namespace {
-void Repeat(Size loopCount, std::function<void(Index)> func) {
+void Repeat(Size loopCount, Function<void(Index)> func) {
 	for (Size i = 0; i < loopCount; i++) {
 		func(i);
 	}
@@ -30,7 +30,7 @@ PixelIndices::PixelIndices(Index cellRow, Index cellCol, Size scale) : scale(sca
 // ========================================================================================
 // Public Methods
 // ========================================================================================
-void PixelIndices::ApplyToAll(std::function<void(Index*)> func) {
+void PixelIndices::ApplyToAll(Function<void(Index*)> func) {
 	for (auto&& index : indices) {
 		func(&index);
 	}
