@@ -21,6 +21,9 @@ void Repeat(Size loopCount, std::function<void(Index)> func) {
 // Constructor
 // ========================================================================================
 PixelIndices::PixelIndices(Index cellRow, Index cellCol, Size scale) : scale(scale) {
+	// 頂点数はこの時点で確定するのでcapacityを確保しておく
+	indices.reserve(scale * scale);
+
 	Create(cellRow, cellCol);
 }
 
