@@ -22,11 +22,6 @@ UInt8VectorPtr EmptyData(Size size) {
 }
 
 template<class T>
-void Concatenate(UInt8Vector* first, const T& second) {
-	first->insert(first->end(), second->begin(), second->end());
-}
-
-template<class T>
 void Concatenate(UInt8VectorPtr& first, const T& second) {
 	first->insert(first->end(), second->begin(), second->end());
 }
