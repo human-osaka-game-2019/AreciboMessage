@@ -1,8 +1,6 @@
 ﻿#ifndef COLOR_H_
 #define COLOR_H_
 
-#include <array>
-
 namespace arecibo_message {
 namespace message_writer {
 namespace bitmap {
@@ -13,7 +11,7 @@ namespace bitmap {
 /// <remarks>現状、黒と白しか指定できない</remarks>
 struct Color {
 public:
-	using RGB = std::array<UInt8, 3>;
+	using RGB = UInt8Array<3>;
 
 	static constexpr Color Black() { return Color(0x00, 0x00, 0x00); }
 	static constexpr Color White() { return Color(0xFF, 0xFF, 0xFF); }

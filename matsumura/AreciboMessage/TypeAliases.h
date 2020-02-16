@@ -1,10 +1,11 @@
 ﻿#ifndef TYPE_ALIASES_H_
 #define TYPE_ALIASES_H_
 
+#include <array>
 #include <cstddef>
 #include <cstdint>
-#include <vector>
 #include <memory>
+#include <vector>
 
 namespace arecibo_message {
 
@@ -19,6 +20,9 @@ using UInt8Collection = Vector<UInt8>;
 
 using Size = std::size_t;
 using Index = std::size_t;
+
+template<Size size>
+using UInt8Array = std::array<UInt8, size>;
 
 template<class T>
 using UniquePtr = std::unique_ptr<T>;
