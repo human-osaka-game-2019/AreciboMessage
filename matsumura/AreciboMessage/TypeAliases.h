@@ -27,6 +27,8 @@ using UInt8Array = std::array<UInt8, size>;
 template<class T>
 using UniquePtr = std::unique_ptr<T>;
 
+using UInt8VectorPtr = UniquePtr<UInt8Vector>;
+
 } // namespace arecibo_message
 
 #endif // !TYPE_ALIASES_H_
