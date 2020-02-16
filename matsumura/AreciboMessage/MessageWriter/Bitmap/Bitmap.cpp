@@ -23,7 +23,7 @@ UInt8VectorPtr EmptyData(Size size) {
 
 template<class T>
 void Concatenate(UInt8Vector* first, const T& second) {
-	first->insert(first->end(), second.begin(), second.end());
+	first->insert(first->end(), second->begin(), second->end());
 }
 
 template<class T>
@@ -45,13 +45,12 @@ void Bitmap::GetData(UInt8Vector* pData) const {
 	pData->reserve(header.FileSize());
 
 	// ビットマップヘッダのデータを格納
-	Concatenate(pData, *header.GetData());
+	Concatenate(pData, header.GetData());
 
 	// 各行のデータを格納
 	for (Index row = 0; row < header.Height(); row++) {
 		auto startIndex = row * header.Width();
-		auto pLineData = GetLineData(startIndex);
-		Concatenate(pData, *pLineData);
+		Concatenate(pData, GetLineData(startIndex));
 	}
 }
 
