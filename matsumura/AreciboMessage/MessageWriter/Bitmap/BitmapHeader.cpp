@@ -36,17 +36,20 @@ void BitmapHeader::CreateFileHeader(Size width, Size height) {
 	auto headerSize = FILE_HEADER_SIZE + INFO_HEADER_SIZE;
 	fileHeader.bfOffBits = static_cast<DWORD>(headerSize);
 
-	auto dataSize = CalcBytesPerLine(width) * height;
+	CalcBytesPerLine(width);
+	auto dataSize = bytesPerLine * height;
 	fileHeader.bfSize = static_cast<DWORD>(headerSize + dataSize);
 }
 
-Size BitmapHeader::CalcBytesPerLine(Size width) {
+void BitmapHeader::CalcBytesPerLine(Size width) {
 	// パディング抜きのサイズは「1行のピクセル数 × 3Byte(RGB)」
 	auto sizeWithoutPaddings = width * 3;
 
-	// パディングぶんを加えた値を「1行あたりのバイト数」として返す
+	// パディングサイズを保存
 	paddingSize = CalcPaddingSize(sizeWithoutPaddings);
-	return sizeWithoutPaddings + paddingSize;
+
+	// パディングぶんを加えた値を「1行あたりのバイト数」として保存
+	bytesPerLine =  sizeWithoutPaddings + paddingSize;
 }
 
 Size BitmapHeader::CalcPaddingSize(Size sizeWithoutPaddings) {

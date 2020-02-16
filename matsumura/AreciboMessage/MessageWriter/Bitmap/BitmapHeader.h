@@ -48,6 +48,12 @@ public:
 	Size Height() const { return infoHeader.biHeight; }
 
 	/// <summary>
+	/// パディングを含む1行のサイズを取得する
+	/// </summary>
+	/// <returns>1行のサイズ</returns>
+	constexpr Size BytesPerLine() const { return bytesPerLine; }
+
+	/// <summary>
 	/// 各行のパディングサイズを取得する
 	/// </summary>
 	/// <returns>パディングサイズ</returns>
@@ -58,11 +64,12 @@ private:
 	BITMAPFILEHEADER fileHeader;
 	BITMAPINFOHEADER infoHeader;
 
+	Size bytesPerLine;
 	Size paddingSize;
 
 	void CreateFileHeader(Size width, Size height);
 	void CreateInfoHeader(Size width, Size height);
-	Size CalcBytesPerLine(Size width);
+	void CalcBytesPerLine(Size width);
 	Size CalcPaddingSize(Size sizeWithoutPaddings);
 };
 
