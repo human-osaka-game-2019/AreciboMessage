@@ -10,7 +10,7 @@ namespace bitmap {
 // Unnamed Namespace
 // ========================================================================================
 namespace {
-void Repeat(Size loopCount, Function<void(Index)> func) {
+void Repeat(Size loopCount, Function<void(Size)> func) {
 	for (Size i = 0; i < loopCount; i++) {
 		func(i);
 	}
