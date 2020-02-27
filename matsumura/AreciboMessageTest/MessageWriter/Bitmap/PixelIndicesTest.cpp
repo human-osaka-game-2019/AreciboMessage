@@ -14,8 +14,8 @@ TEST(PixelIndices_Ctor, NumberOfIndices) {
     PixelIndices target(0, 0, scale);
 
     // Assert
-    std::vector<Size> indices;
-    target.ApplyToAll([&indices](Size& index) { indices.push_back(index); });
+    std::vector<Index> indices;
+    target.ApplyToAll([&indices](Index* pIndex) { indices.push_back(*pIndex); });
 
     EXPECT_EQ(5 * 5, indices.size());
 }

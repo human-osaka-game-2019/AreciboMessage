@@ -1,8 +1,6 @@
 ﻿#ifndef MESSAGE_WRITER_BASE_H_
 #define MESSAGE_WRITER_BASE_H_
 
-#include <functional>
-
 #include "MessageData/BitContainer.h"
 #include "MessageWriter/Constants.h"
 #include "MessageWriter/IMessageWriter.h"
@@ -16,22 +14,23 @@ namespace message_writer {
 template <class OutputType>
 class MessageWriterBase : public IMessageWriter {
 public:
-	using ValueGenerator = std::function<OutputType(bool)>;
+	using BitContainer = message_data::BitContainer;
+	using ValueGenerator = Function<OutputType(bool)>;
 
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	/// <param name="message">メッセージデータ</param>
+	/// <param name="messageBits">メッセージデータ</param>
 	/// <param name="valueGenerator">出力する値を生成する関数オブジェクト</param>
-	MessageWriterBase(const MessageBits& message, ValueGenerator valueGenerator)
-		: message(message), outputValue(valueGenerator) {}
+	MessageWriterBase(const BitContainer& messageBits, ValueGenerator valueGenerator)
+		: messageBits(messageBits), valueGenerator(valueGenerator) {}
 
 	/// <summary>
 	/// メッセージを書き出す
 	/// </summary>
 	void Write() override {
 		// Template Methodパターン
-		for (Size row = 0; row < MESSAGE_HEIGHT; row++) {
+		for (Index row = 0; row < MESSAGE_HEIGHT; row++) {
 			// 1行書き出す
 			WriteLine(row);
 
@@ -47,11 +46,11 @@ protected:
 	/// <summary>
 	/// アレシボメッセージの1マスを書き出す
 	/// </summary>
-	/// <param name="row">行(0～72)</param>
-	/// <param name="col">列(0～22)</param>
+	/// <param name="row">行番号(0～72)</param>
+	/// <param name="col">列番号(0～22)</param>
 	/// <param name="value">そのセルの値</param>
 	/// <remarks>メッセージデータの左上を(0, 0)として扱う</remarks>
-	virtual void WriteCell(Size row, Size col, OutputType value) = 0;
+	virtual void WriteCell(Index row, Index col, OutputType value) = 0;
 
 	/// <summary>
 	/// 次の行に移動する
@@ -64,13 +63,14 @@ protected:
 	virtual void Finalize() {}
 
 private:
-	const MessageBits& message;
-	ValueGenerator outputValue;
+	const BitContainer& messageBits;
+	ValueGenerator valueGenerator;
 
-	void WriteLine(Size row) {
-		for (Size col = 0; col < MESSAGE_WIDTH; col++) {
-			bool bit = message[row * MESSAGE_WIDTH + col];
-			WriteCell(row, col, outputValue(bit));
+	void WriteLine(Index row) {
+		auto startIndex = row * MESSAGE_WIDTH;
+		for (Index col = 0; col < MESSAGE_WIDTH; col++) {
+			bool bit = messageBits[startIndex + col];
+			WriteCell(row, col, valueGenerator(bit));
 		}
 	}
 };

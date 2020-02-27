@@ -1,8 +1,6 @@
 ﻿#ifndef SINGLETON_H_
 #define SINGLETON_H_
 
-#include <memory>
-
 #include "IUncopyable.h"
 
 namespace arecibo_message {
@@ -29,7 +27,7 @@ public:
 	}
 
 private:
-	using SingletonPointerType = std::unique_ptr<T>;
+	using SingletonPointerType = UniquePtr<T>;
 
 	inline static T* CreateInstance() { return new T(); }
 

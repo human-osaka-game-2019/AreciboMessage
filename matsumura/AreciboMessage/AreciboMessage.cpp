@@ -1,35 +1,30 @@
 ﻿#include "AreciboMessage.h"
 
-#include <memory>
-
 #include <tchar.h>
 #include "MessageData/BitContainer.h"
 #include "MessageWriter/MessageWriterFactory.h"
 
 namespace arecibo_message {
-using message_data::BitContainer;
 
+using BitContainer = message_data::BitContainer;
+
+// ========================================================================================
+// Unnamed Namespace
+// ========================================================================================
 namespace {
-std::unique_ptr<BitContainer> pBitContainer;
-}
+UniquePtr<BitContainer> pMessageBits;
+} // namespace
 
 // ========================================================================================
 // Constructor
 // ========================================================================================
-AreciboMessage::AreciboMessage(const MessageSource& message) {
-#if _DEBUG
+AreciboMessage::AreciboMessage(const UInt32Vector& message) {
 	// メモリリーク検知開始
 	utility::StartDetectingMemoryLeaks();
-#endif
 
 	// 32ビットのデータ列を8ビットのデータ列に変換して保持しておく
-	pBitContainer = std::make_unique<BitContainer>(message);
+	pMessageBits = std::make_unique<BitContainer>(message);
 }
-
-// ========================================================================================
-// Destructor
-// ========================================================================================
-AreciboMessage::~AreciboMessage() {}
 
 // ========================================================================================
 // Public Methods
@@ -37,8 +32,8 @@ AreciboMessage::~AreciboMessage() {}
 void AreciboMessage::Output() const {
 	// MessageWriterのインスタンスを生成して、書き出し先にメッセージを出力する
 	using Factory = message_writer::MessageWriterFactory;
-	auto& writer = Factory::Instance().CreateWriter(*pBitContainer);
-	writer.Write();
+	auto pWriter = Factory::Instance().CreateWriter(*pMessageBits);
+	pWriter->Write();
 }
 
-} // namespace arecibo_message 
+} // namespace arecibo_message

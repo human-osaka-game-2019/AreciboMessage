@@ -1,14 +1,11 @@
 ﻿#ifndef BITMAP_H_
 #define BITMAP_H_
 
-#include <memory>
 #include <ostream>
-#include <vector>
 
-#include <Windows.h>
 #include "IUncopyable.h"
+#include "MessageWriter/Bitmap/BitmapHeader.h"
 #include "MessageWriter/Bitmap/Color.h"
-#include "MessageWriter/Bitmap/Paddings.h"
 
 namespace arecibo_message {
 namespace message_writer {
@@ -28,29 +25,23 @@ public:
 	Bitmap(Size width, Size height);
 
 	/// <summary>
-	/// 添字演算子
+	/// ピクセルの色情報を設定する
 	/// </summary>
 	/// <param name="index">何ピクセル目か</param>
-	/// <returns>指定されたピクセルのRGB値</returns>
-	/// <remarks>BMPファイルのフォーマット同様、画像の左下のピクセルを先頭(0)として扱う</remarks>
-	Color& operator[](Size index) { return bitmapData[index]; }
+	/// <param name="color">色情報</param>
+	void SetColor(Index index, Color color) { bitmapData[index] = color; }
 
 	/// <summary>
-	/// ビットマップファイル形式で書き出す
+	/// ビットマップファイルのデータを取得する
 	/// </summary>
-	/// <param name="stream">出力用ストリーム</param>
-	void Write(std::ostream& stream) const;
+	/// <returns>ビットマップファイルのデータ</returns>
+	UInt8VectorPtr GetData() const;
 
 private:
-	BITMAPFILEHEADER fileHeader;
-	BITMAPINFOHEADER infoHeader;
-	std::vector<Color> bitmapData;
-	std::unique_ptr<Paddings> pPaddings;
+	Vector<Color> bitmapData;
+	BitmapHeader header;
 
-	void CreateFileHeader(Size width, Size height);
-	Size CalcBytesPerLine(Size width);
-	void CreateInfoHeader(Size width, Size height);
-	void WriteLine(std::ostream& file, Size row) const;
+	UInt8VectorPtr GetLineData(Index startIndex) const;
 };
 
 } // namespace bitmap

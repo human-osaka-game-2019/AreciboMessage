@@ -15,8 +15,8 @@ namespace bitmap {
 // ========================================================================================
 // Constructor
 // ========================================================================================
-BitmapWriter::BitmapWriter(const message_data::BitContainer& bytes)
-	: MessageWriterBase<Color>(bytes, [](bool bit) { return bit ? Color::White() : Color::Black(); }) {
+BitmapWriter::BitmapWriter(const BitContainer& messageBits)
+	: MessageWriterBase(messageBits, [](bool bit) { return bit ? Color::White() : Color::Black(); }) {
 	// 設定情報から拡大率を取得する
 	auto& settings = utility::Settings::Instance();
 	scale = settings.GetIntValue(TEXT("Bitmap"), TEXT("Scale"));
@@ -27,18 +27,24 @@ BitmapWriter::BitmapWriter(const message_data::BitContainer& bytes)
 // ========================================================================================
 // Overridden Protected Methods
 // ========================================================================================
-void BitmapWriter::WriteCell(Size row, Size col, OutputType value) {
+void BitmapWriter::WriteCell(Index row, Index col, OutputType value) {
 	// メッセージの行と列に対応するビットマップのピクセル番号を算出する
 	PixelIndices indices(row, col, scale);
 
 	// 算出した各ピクセルに色を設定
-	indices.ApplyToAll([=](Size& index) { (*pBitmap)[index] = value; });
+	indices.ApplyToAll([=](Index* pIndex) { pBitmap->SetColor(*pIndex, value); });
 }
 
 void BitmapWriter::Finalize() {
-	// ファイルに書き出す
+	// ビットマップファイルのバイナリデータをUInt8のコレクションとして取得する
+	auto pData = pBitmap->GetData();
+
+	// 1バイトずつファイルに書き出す
 	std::ofstream stream("AreciboMessage.bmp", std::ios::binary);
-	pBitmap->Write(stream);
+	for (auto&& byte : *pData) {
+		stream << byte;
+	}
+
 	stream.close();
 
 	// 書き出したビットマップファイルを既定のアプリで開く

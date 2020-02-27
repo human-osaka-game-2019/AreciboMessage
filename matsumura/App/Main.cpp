@@ -5,7 +5,7 @@
 void OutputAreciboMessage() {
 	using namespace arecibo_message;
 
-	MessageSource source = {
+	UInt32Vector source = {
 		0x02A80050, 0x50122225, 0x95555240, 0x00000001, 0x80000D00,
 		0x001A0000, 0x540000F8, 0x00000006, 0x1C618800, 0x321A3186,
 		0xBEFBEF80, 0x00001000, 0x04000000, 0x20000FC0, 0x01F00000,

@@ -5,12 +5,6 @@
     <ClCompile Include="MessageData\BitContainerTest.cpp">
       <Filter>MessageData</Filter>
     </ClCompile>
-    <ClCompile Include="MessageData\ByteContainerTest.cpp">
-      <Filter>MessageData</Filter>
-    </ClCompile>
-    <ClCompile Include="MessageWriter\Bitmap\PaddingsTest.cpp">
-      <Filter>MessageWriter\Bitmap</Filter>
-    </ClCompile>
     <ClCompile Include="MessageWriter\Bitmap\PixelIndicesTest.cpp">
       <Filter>MessageWriter\Bitmap</Filter>
     </ClCompile>

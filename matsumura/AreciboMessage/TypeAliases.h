@@ -1,19 +1,37 @@
 ﻿#ifndef TYPE_ALIASES_H_
 #define TYPE_ALIASES_H_
 
+#include <array>
 #include <cstddef>
 #include <cstdint>
+#include <functional>
+#include <memory>
 #include <vector>
 
 namespace arecibo_message {
 
-using BigEndian32 = std::uint32_t;
-using U8 = std::uint8_t;
-
-using MessageSource = std::vector<BigEndian32>;
-using U8s = std::vector<U8>;
+using UInt32 = std::uint32_t;
+using UInt8 = std::uint8_t;
 
 using Size = std::size_t;
+using Index = std::size_t;
+
+template<class T>
+using Vector = std::vector<T>;
+
+using UInt32Vector = Vector<UInt32>;
+using UInt8Vector = Vector<UInt8>;
+
+template<Size size>
+using UInt8Array = std::array<UInt8, size>;
+
+template<class T>
+using UniquePtr = std::unique_ptr<T>;
+
+using UInt8VectorPtr = UniquePtr<UInt8Vector>;
+
+template<class T>
+using Function = std::function<T>;
 
 } // namespace arecibo_message
 

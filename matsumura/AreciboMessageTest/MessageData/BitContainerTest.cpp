@@ -7,11 +7,11 @@ namespace message_data {
 
 TEST(BitContainer_OpArraySubscript, CanGetEachBit) {
 	// Arrange
-	MessageSource source = { 0x12345678 };
+	UInt32Vector source = { 0x12345678 };
 	BitContainer target(source);
 
 	// Act
-	U8s results;
+	UInt8Vector results;
 	for (size_t i = 0; i < 32; i++) {
 		results.push_back(target[i]);
 	}

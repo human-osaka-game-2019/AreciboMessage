@@ -88,7 +88,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>TypeAliases.h;Utility\DetectMemoryLeaks.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -101,7 +103,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>TypeAliases.h;Utility\DetectMemoryLeaks.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -116,7 +120,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>TypeAliases.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,7 +139,9 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>TypeAliases.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ForcedIncludeFiles>pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,29 +151,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AreciboMessage.cpp" />
-    <ClCompile Include="MessageData\ByteContainer.cpp" />
+    <ClCompile Include="MessageData\BitContainer.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\Bitmap.cpp" />
+    <ClCompile Include="MessageWriter\Bitmap\BitmapHeader.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\BitmapWriter.cpp" />
-    <ClCompile Include="MessageWriter\Bitmap\Paddings.cpp" />
     <ClCompile Include="MessageWriter\Bitmap\PixelIndices.cpp" />
     <ClCompile Include="MessageWriter\MessageWriterFactory.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Utility\Settings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AreciboMessage.h" />
     <ClInclude Include="IUncopyable.h" />
     <ClInclude Include="MessageData\BitContainer.h" />
-    <ClInclude Include="MessageData\ByteContainer.h" />
     <ClInclude Include="MessageWriter\Bitmap\Bitmap.h" />
+    <ClInclude Include="MessageWriter\Bitmap\BitmapHeader.h" />
     <ClInclude Include="MessageWriter\Bitmap\BitmapWriter.h" />
     <ClInclude Include="MessageWriter\Bitmap\Color.h" />
-    <ClInclude Include="MessageWriter\Bitmap\Paddings.h" />
     <ClInclude Include="MessageWriter\Bitmap\PixelIndices.h" />
     <ClInclude Include="MessageWriter\Console\ConsoleWriter.h" />
     <ClInclude Include="MessageWriter\Constants.h" />
     <ClInclude Include="MessageWriter\IMessageWriter.h" />
     <ClInclude Include="MessageWriter\MessageWriterBase.h" />
     <ClInclude Include="MessageWriter\MessageWriterFactory.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="TypeAliases.h" />
     <ClInclude Include="Utility\DetectMemoryLeaks.h" />
     <ClInclude Include="Utility\Settings.h" />
